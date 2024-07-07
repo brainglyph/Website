@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.col1d1d1b {
+    color: #1d1d1b !important;
+}
+
+.daff01 {
+    color: #daff01 !important;
+}
+
+.bgDaff01 {
+    background-color: #daff01 !important;
+}
+
+.bg1d1d1b {
+    background-color: #1d1d1b !important;
+}
+
+.lineHeightLoose {
+    line-height: 3 !important;
+}
