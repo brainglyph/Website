@@ -62,7 +62,8 @@ export default function Home() {
             loop: true,
             cursor: "_",
             deleteSpeed: 20,
-            delay: 50
+            delay: 50,
+            wrapperClassName: "auxMono"
           }}
         />
         </span>
