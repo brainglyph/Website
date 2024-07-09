@@ -21,3 +21,246 @@
 .lineHeightLoose {
     line-height: 3 !important;
 }
+
+.glyph {
+    position: relative;
+    font-size: 40pt;
+    top: 90px;
+    left: 62px;
+}
+
+.astGlyph {
+    position: absolute;
+    visibility: visible;
+    left: 0px;
+    top: 4px;
+    width: 140px;
+}
+
+.negativeMarginXL {
+    margin-top: -7rem !important;
+}
+
+.bigPaddingBottom {
+    padding-bottom: 8rem !important;
+}
+
+.Typewriter {
+    color: #1d1d1b;
+    font-family: 'Aux Mono', monospace;
+    margin-bottom: -80px;
+    line-height: 50px;
+}
+
+.iconFill {
+    color: #daff01;
+    opacity: 0.7;
+}
+
+.iconFill:hover {
+    color: #daff01;
+    opacity: 1;
+}
+
+.spacer {
+    width: 40%;
+    border-bottom: 2px solid #1d1d1b;
+    opacity: 0.5;
+    margin-top: 40px;
+}
+
+.buttonCTA {
+    background-color: #daff01;
+    color: #1d1d1b;
+    padding: 25px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1);
+}
+
+.buttonCTAReverse {
+    background-color: #1d1d1b;
+    color: #daff01;
+    padding: 25px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1);
+    min-width: 400px;
+}
+
+.buttonCTAReverse:hover {
+    transform: scale(1.05);
+}
+
+.buttonCTA:hover {
+    transform: scale(1.05);
+}
+
+.flipImage {
+    transform: scaleY(-1);
+}
+
+.imageShadow {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+}
+
+.teamFlex {
+    gap: 150px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.advisorFlex {
+    gap: 100px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.advisorySect {
+    max-width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.teamDesc {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.supporters {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: -20px;
+}
+
+.supporters img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contactButtons {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.maxWidth90pc {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sectionImage {
+    margin-top: -200px;
+    z-index: 1;
+}
+
+.sectionImageReverse {
+    margin-bottom: -200px;
+    z-index: 1;
+}
+
+.zIndex2 {
+    z-index: 2;
+}
+
+.zIndex4 {
+    z-index: 4;
+}
+
+.PRDiv {
+    width: 100%;
+    height: 800px;
+    margin-top: -140px;
+    margin-bottom: -140px;
+    background-image: url("/PR.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.PRTitle {
+    font-size: 80px;
+    letter-spacing: 2px;
+    color: #ffd10a;
+    font-weight: 700;
+    margin-top: 18%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* start a mobile media query */
+
+@media (max-width: 1000px) {
+    .noMob {
+        display: none;
+    }
+
+    .sectionImage {
+        margin-top: -20px;
+    }
+
+    .sectionImageReverse {
+        margin-bottom: -20px;
+    }
+
+    .mobilePerks p {
+        margin-bottom: 20px;
+    }
+
+    .mobilePerks p:first-child{
+        margin-top: 30px;
+    }
+
+    .mobilePerks {
+        margin-bottom: -80px;
+    }
+
+    .buttonCTA {
+        max-width: 90%;
+        font-size: 12px;
+    }
+
+    .teamFlex {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        gap: 50px;
+    }
+
+    .advisorFlex {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        gap: 50px;
+    }
+
+    .contactButtons {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .contactButtons button {
+        font-size: 14px;
+        min-width: 0 !important;
+        width: 98% !important;
+    }
+}

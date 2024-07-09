@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
@@ -45,11 +45,9 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className={clsx("pt-16 flex-grow bgDaff01")}>
+            <main className={clsx("pt-16 flex-grow bg1d1d1b")}>
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-            </footer>
           </div>
         </Providers>
       </body>
