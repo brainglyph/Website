@@ -16,9 +16,20 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: {
-    icon: "/favicon.png",
-  },
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      url: '/favicon.png',
+      media: '(prefers-color-scheme: dark)',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      url: '/favicon_dark.png',
+      media: '(prefers-color-scheme: light)',
+    },
+  ],
 };
 
 export const viewport: Viewport = {

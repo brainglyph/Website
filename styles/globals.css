@@ -188,12 +188,15 @@
 
 .PRDiv {
     width: 100%;
-    height: 800px;
+    height: auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
     margin-top: -140px;
-    margin-bottom: -140px;
     background-image: url("/PR.png");
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    z-index: 0;
 }
 
 .PRTitle {
@@ -201,12 +204,27 @@
     letter-spacing: 2px;
     color: #ffd10a;
     font-weight: 700;
-    margin-top: 18%;
-    margin-bottom: 50px;
+    margin-top: 150px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-/* start a mobile media query */
+.PRSubtitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #ffd10a;
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.sectionImageBlack {
+    transform: scaleX(-1) scaleY(-1);
+    margin-top: -100px !important;
+}
+
+.marginTest {
+    margin-top: 100px;
+}
 
 @media (max-width: 1000px) {
     .noMob {
@@ -214,11 +232,25 @@
     }
 
     .sectionImage {
-        margin-top: -20px;
+        margin-top: -50px;
     }
 
-    .sectionImageReverse {
-        margin-bottom: -20px;
+    .PRTitle {
+        font-size: 60px;
+        letter-spacing: 2px;
+        color: #ffd10a;
+        font-weight: 700;
+        margin-top: 150px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .PRSubtitle {
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #ffd10a;
+        margin-bottom: 80px;
+        text-align: center;
     }
 
     .mobilePerks p {
@@ -262,5 +294,15 @@
         font-size: 14px;
         min-width: 0 !important;
         width: 98% !important;
+    }
+
+    .sectionImageBlack {
+        transform: scaleX(-1) scaleY(-1);
+        margin-top: -60px !important;
+        margin-bottom: -150px;
+    }
+
+    .sectionImageReverse {
+        margin-bottom: -20px;
     }
 }

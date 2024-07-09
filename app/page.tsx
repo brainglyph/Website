@@ -70,11 +70,12 @@ export default function Home() {
       <Image src="/SectionEnd.svg" alt="Ast Black Image" width="0" height="0"
              style={{ width: "100%", height: "auto" }} className={"sectionImage"}/>
       <div className={"PRDiv"}>
-        <h1 className={"morne zIndex4 PRTitle"}>Project Repo</h1>
+        <h1 className={"morne zIndex4 PRTitle maxWidth90pc"}>Project Repo</h1>
+        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>, <br></br>a knowledge-based action roguelite.</h2>
       </div>
       <Image src="/SectionEndBlack.svg" alt="Ast Black Image" width="0" height="0"
-             style={{ width: "100%", height: "auto" }} className={"flipImage mobileImageReverse sectionImageReverse"} />
-      <div className="inline-block w-full text-center justify-center lineHeightLoose mt-24 bigPaddingBottom zIndex2">
+             style={{ width: "100%", height: "auto" }} className={"flipImage mobileImageReverse sectionImageReverse sectionImageBlack"} />
+      <div className="inline-block w-full text-center justify-center lineHeightLoose mt-14 bigPaddingBottom zIndex2">
         <h1 className={clsx(title(), "auxMono daff01")}>Join our community</h1>
         <h2 className={clsx("text-2xl auxMono daff01 mt-3 maxWidth90pc")}>Stay updated and be part of the development of
           Project
