@@ -49,15 +49,15 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-0 pb-0">
       <div
-        className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose negativeMarginXL bigPaddingBottom zIndex4">
+        className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose negativeMarginXL bigPaddingBottom zIndex4 firstSect">
         <span className={clsx("glyph col1d1d1b auxMono", showImage && "invisible")}>{currentGlyph}{showImage &&
           <Image src="/astBlack.svg" alt="Ast Black Image" width="135" height="0" className={"astGlyph"} />
         }</span>
         <Image src="/logoBlackEmpty.svg" alt={""} width="130" height="0" className={"mx-auto mb-10"} />
         <h1 className={clsx(title(), "auxMono col1d1d1b")}>We're making games</h1>
-        <span className={title()}><Typewriter
+        <span className={clsx(title(), "auxMono spantype")}><Typewriter
           options={{
-            strings: ["you can't stop thinking about", "that you will never forget"],
+            strings: ["you can't stop thinking about", "you'll never forget"],
             autoStart: true,
             loop: true,
             cursor: "_",

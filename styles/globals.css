@@ -47,9 +47,12 @@
 
 .Typewriter {
     color: #1d1d1b;
-    font-family: 'Aux Mono', monospace;
     margin-bottom: -80px;
     line-height: 50px;
+}
+
+.spantype {
+    font-family: "Aux Mono", monospace;
 }
 
 .iconFill {
@@ -304,5 +307,9 @@
 
     .sectionImageReverse {
         margin-bottom: -20px;
+    }
+
+    .firstSect {
+        height: 550px;
     }
 }
