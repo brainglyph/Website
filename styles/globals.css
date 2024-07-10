@@ -88,13 +88,13 @@
     background-color: #1d1d1b;
     color: #daff01;
     padding: 25px 20px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
     cursor: pointer;
     transition: all 0.3s;
     transform: scale(1);
-    min-width: 400px;
+    width: 100%;
 }
 
 .buttonCTAReverse:hover {
