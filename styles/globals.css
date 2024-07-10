@@ -171,6 +171,12 @@
     margin-right: auto;
 }
 
+.maxWidth80pc {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .sectionImage {
     margin-top: -200px;
     z-index: 1;
@@ -310,6 +316,10 @@
     }
 
     .firstSect {
-        height: 550px;
+        height: 570px;
+    }
+
+    .negativeMarginXL {
+        margin-top: -9rem !important;
     }
 }

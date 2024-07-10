@@ -72,7 +72,7 @@ export default function Home() {
              style={{ width: "100%", height: "auto" }} className={"sectionImage"}/>
       <div className={"PRDiv"}>
         <h1 className={"morne zIndex4 PRTitle maxWidth90pc"}>Project Repo</h1>
-        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>, <br></br>a knowledge-based action roguelite.</h2>
+        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>, a knowledge-based action roguelite.</h2>
       </div>
       <Image src="/SectionEndBlack.svg" alt="Ast Black Image" width="0" height="0"
              style={{ width: "100%", height: "auto" }} className={"flipImage mobileImageReverse sectionImageReverse sectionImageBlack"} />
@@ -99,7 +99,7 @@ export default function Home() {
              style={{ width: "100%", height: "auto" }} className={"flipImage mobileImageReverse sectionImageReverse"} />
       <div
         className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose pb-6 zIndex4">
-        <div className={"mt-10"}><h1 className={clsx(title(), "auxMono col1d1d1b maxWidth90pc")}>The brainglyph team</h1></div>
+        <div className={"mt-10 maxWidth90pc"}><h1 className={clsx(title(), "auxMono col1d1d1b")}>The brainglyph team</h1></div>
         <h2 className={clsx("text-lg auxMono col1d1d1b mt-6 teamDesc")}>We have worked together for almost two years,
           since we found out our shared passion for independent game development. We met at the IT University of Copenhagen
           Master of Sciences in Games Technology, which we completed in June 2024. Our drive and passion brought us
