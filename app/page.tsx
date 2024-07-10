@@ -116,7 +116,7 @@ export default function Home() {
             <Image src="/Soren.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl font-semibold mt-6")}>Søren</h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Tech Director</h2>
-            <p className={"auxMono col1d1d1b text-md leading-7 max-w-md mt-3"}>Søren is a senior developer and technical
+            <p className={"auxMono col1d1d1b text-md leading-7 max-w-md mt-3"}>Søren is a developer and technical
               director with a background in cross-media studies and a deep interest in emergent gameplay and
               replayability. </p>
           </div>
