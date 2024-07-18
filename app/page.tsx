@@ -69,13 +69,15 @@ export default function Home() {
         </span>
       </div>
       <Image src="/SectionEnd.svg" alt="Ast Black Image" width="0" height="0"
-             style={{ width: "100%", height: "auto" }} className={"sectionImage"}/>
+             style={{ width: "100%", height: "auto" }} className={"sectionImage"} />
       <div className={"PRDiv"}>
         <h1 className={"morne zIndex4 PRTitle maxWidth90pc"}>Project Repo</h1>
-        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>, a knowledge-based action roguelite.</h2>
+        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>,
+          a knowledge-based action roguelite.</h2>
       </div>
       <Image src="/SectionEndBlack.svg" alt="Ast Black Image" width="0" height="0"
-             style={{ width: "100%", height: "auto" }} className={"flipImage mobileImageReverse sectionImageReverse sectionImageBlack"} />
+             style={{ width: "100%", height: "auto" }}
+             className={"flipImage mobileImageReverse sectionImageReverse sectionImageBlack"} />
       <div className="inline-block w-full text-center justify-center lineHeightLoose mt-14 bigPaddingBottom zIndex2">
         <h1 className={clsx(title(), "auxMono daff01")}>Join our community</h1>
         <h2 className={clsx("text-2xl auxMono daff01 mt-3 maxWidth90pc")}>Stay updated and be part of the development of
@@ -83,13 +85,15 @@ export default function Home() {
           Repo</h2>
         <br className={"noMob"}></br>
         <br></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/vhdEjdyr"} target={"_blank"}><DiscordIcon /> Join our Discord server!</Button>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/vhdEjdyr"}
+                target={"_blank"}><DiscordIcon /> Join our Discord server!</Button>
         <br></br>
         <br className={"noMob"}></br>
         <br></br>
         <h1 className={clsx("auxMono daff01 text-4xl font-medium maxWidth90pc")}>Community perks include:</h1>
         <div className={"maxWidth90pc mobilePerks"}>
-          <p className={clsx("auxMono daff01 mt-3")}><b>Have a chat with us!</b> - We will take some time daily to answer
+          <p className={clsx("auxMono daff01 mt-3")}><b>Have a chat with us!</b> - We will take some time daily to
+            answer
             messages.</p>
           <p className={clsx("auxMono daff01")}><b>Playtest the game!</b> - We will often perform playtests.</p>
           <p className={clsx("auxMono daff01")}><b>Watch as we do!</b> - We will occasionally stream our work.</p>
@@ -99,9 +103,11 @@ export default function Home() {
              style={{ width: "100%", height: "auto" }} className={"flipImage mobileImageReverse sectionImageReverse"} />
       <div
         className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose pb-6 zIndex4">
-        <div className={"mt-10 maxWidth90pc"}><h1 className={clsx(title(), "auxMono col1d1d1b")}>The brainglyph team</h1></div>
+        <div className={"mt-10 maxWidth90pc"}><h1 className={clsx(title(), "auxMono col1d1d1b")}>The brainglyph
+          team</h1></div>
         <h2 className={clsx("text-lg auxMono col1d1d1b mt-6 teamDesc")}>We have worked together for almost two years,
-          since we found out our shared passion for independent game development. We met at the IT University of Copenhagen
+          since we found out our shared passion for independent game development. We met at the IT University of
+          Copenhagen
           Master of Sciences in Games Technology, which we completed in June 2024. Our drive and passion brought us
           closer both professionally and as friends.</h2>
         <div className={"flex items-start justify-center mt-12 teamFlex"}>
@@ -122,17 +128,19 @@ export default function Home() {
           </div>
         </div>
         <div className={"mt-20"}>
-          <div className={"maxWidth90pc"}><h1 className={clsx(title(), "auxMono col1d1d1b")}>We're not alone in this!</h1></div>
-          <h2 className={clsx(subtitle(), "auxMono col1d1d1b advisorySect maxWidth90pc")}>Along with our dynamic community and our
+          <div className={"maxWidth90pc"}><h1 className={clsx(title(), "auxMono col1d1d1b")}>We're not alone in
+            this!</h1></div>
+          <h2 className={clsx(subtitle(), "auxMono col1d1d1b advisorySect maxWidth90pc")}>Along with our dynamic
+            community and our
             talented freelancers, we are building a great board of advisors:</h2>
         </div>
         <div className={"flex items-start justify-center mt-20 advisorFlex"}>
           <div className={"flex flex-col items-center"}>
             <Image src="/Miguel.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl font-semibold mt-6")}>Miguel Sicart</h1>
-            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Associate Professor @ ITU</h2>
-            <p className={"auxMono col1d1d1b text-md leading-7 max-w-md mt-3"}>Miguel is an Associate Professor
-              at the IT University of Copenhagen and leads the Center for Computer Games Research. He writes and teaches
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Professor @ ITU <br></br> Head of the Center for Digital Play  </h2>
+            <p className={"auxMono col1d1d1b text-md leading-7 max-w-md mt-3"}>Miguel is a Professor
+              at the IT University of Copenhagen and head of the Center for Digital Play. He writes and teaches
               about the design and culture of playable media.</p>
           </div>
           <div className={"flex flex-col items-center"}>
@@ -140,8 +148,8 @@ export default function Home() {
             <h1 className={clsx("auxMono col1d1d1b text-xl font-semibold mt-6")}>Stella Vaka</h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>CEO @ Silkroad Studios</h2>
             <p className={"auxMono col1d1d1b text-md leading-7 max-w-md mt-3"}>Stella is an expert in independent game
-              business and design management. As an ambassador for Women in Games, Stella
-              is dedicated to fostering diversity and inclusivity in the gaming industry.</p>
+              business and design management. Stella is dedicated to fostering meritocratic teams who know no borders,
+              built upon ambitious dreams and passionate creatives.</p>
           </div>
           <div className={"flex flex-col items-center"}>
             <Image src="/QuestionMark.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
@@ -155,7 +163,7 @@ export default function Home() {
         </div>
       </div>
       <Image src="/SectionEnd.svg" alt="Ast Black Image" width="0" height="0"
-             style={{ width: "100%", height: "auto" }} className={"sectionImage"}/>
+             style={{ width: "100%", height: "auto" }} className={"sectionImage"} />
       <div className="inline-block w-full text-center justify-center lineHeightLoose mt-24 bigPaddingBottom zIndex4">
         <h1 className={clsx(title(), "auxMono daff01")}>We are supported by</h1>
         <div className={"supporters"}>
@@ -170,13 +178,16 @@ export default function Home() {
         <h2 className={clsx("text-lg auxMono col1d1d1b mt-6 teamDesc")}>We'll get back to you as soon as possible!</h2>
         <br></br>
         <div className={"contactButtons maxWidth90pc"}>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/vhdEjdyr"} target={"_blank"}><DiscordIcon/> Join our Discord server!</Button>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:hello@brainglyph.com"} target={"_blank"}>Shoot us an email!</Button>
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/vhdEjdyr"}
+                  target={"_blank"}><DiscordIcon /> Join our Discord server!</Button>
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:hello@brainglyph.com"}
+                  target={"_blank"}>Shoot us an email!</Button>
         </div>
       </div>
       <div
         className="inline-block w-full text-center justify-center lineHeightLoose pb-6">
-        <div className={"mt-7 maxWidth90pc"}><h1 className={clsx("auxMono daff01 text-xs")}>This website is made and maintained with ♥ by brainglyph</h1></div>
+        <div className={"mt-7 maxWidth90pc"}><h1 className={clsx("auxMono daff01 text-xs")}>This website is made and
+          maintained with ♥ by brainglyph</h1></div>
       </div>
     </section>
   );
