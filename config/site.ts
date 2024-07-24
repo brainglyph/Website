@@ -63,7 +63,7 @@ export const siteConfig = {
     github: "https://github.com/brainglyph",
     twitter: "https://x.com/brainglyph",
     docs: "#",
-    discord: "https://discord.gg/vhdEjdyr",
+    discord: "https://discord.gg/kybRqJfH",
     sponsor: "#",
   },
 };

@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-shape-divider-top-1721854402 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    fill: #daff01 !important;
+    z-index: 3;
+}
+
+.custom-shape-divider-bottom-1721854866 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    fill: #1d1d1b !important;
+    z-index: 3;
+    margin-top: -140px;
+}
+
+.custom-shape-divider-bottom-1721854866-g {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    fill: #daff01 !important;
+    z-index: 3;
+    margin-top: -140px;
+}
+
 .col1d1d1b {
     color: #1d1d1b !important;
 }
@@ -38,11 +66,11 @@
 }
 
 .negativeMarginXL {
-    margin-top: -7rem !important;
+    margin-top: -8rem !important;
 }
 
 .bigPaddingBottom {
-    padding-bottom: 8rem !important;
+    padding-bottom: 9rem !important;
 }
 
 .Typewriter {
@@ -87,9 +115,9 @@
 .buttonCTAReverse {
     background-color: #1d1d1b;
     color: #daff01;
-    padding: 25px 20px;
-    font-size: 13px;
-    font-weight: 700;
+    padding: 25px 35px;
+    font-size: 18px;
+    font-weight: 300;
     letter-spacing: 2px;
     cursor: pointer;
     transition: all 0.3s;
@@ -146,7 +174,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    margin-bottom: -20px;
+    margin-bottom: 10rem;
 }
 
 .supporters img {
@@ -196,9 +224,9 @@
 }
 
 .PRDiv {
+    position: relative;
     width: 100%;
     height: auto;
-    padding-bottom: 50px;
     padding-top: 50px;
     margin-top: -140px;
     background-image: url("/PR.png");
@@ -214,7 +242,7 @@
     color: #ffd10a;
     font-weight: 700;
     margin-top: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     text-align: center;
 }
 
@@ -222,7 +250,7 @@
     font-size: 20px;
     letter-spacing: 2px;
     color: #ffd10a;
-    margin-bottom: 120px;
+    margin-bottom: 180px;
     text-align: center;
 }
 
@@ -258,7 +286,7 @@
         font-size: 20px;
         letter-spacing: 2px;
         color: #ffd10a;
-        margin-bottom: 80px;
+        margin-bottom: 170px;
         text-align: center;
     }
 
@@ -268,10 +296,6 @@
 
     .mobilePerks p:first-child{
         margin-top: 30px;
-    }
-
-    .mobilePerks {
-        margin-bottom: -80px;
     }
 
     .buttonCTA {

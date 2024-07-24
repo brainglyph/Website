@@ -34,8 +34,8 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image src="/logoNeon.svg" alt={""} width="42" height="0" />
-            <p className="text-inherit auxMono daff01 ml-2">brainglyph</p>
+            <Image src="/logoNeon.svg" alt={""} width="32" height="0" />
+            <p className="text-inherit auxMono daff01 ml-1 mt-1">brainglyph</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
