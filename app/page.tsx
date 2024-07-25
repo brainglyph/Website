@@ -98,11 +98,11 @@ export default function Home() {
         <br></br>
         <h1 className={clsx("auxMono daff01 text-4xl font-medium maxWidth90pc mb-10")}>Community perks include:</h1>
         <div className={"maxWidth90pc mobilePerks mb-40"}>
-          <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Have a chat with us!</b> - <span
+          <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Have a chat with us</b> - <span
             className={"poppins-regular"}>We will take some time daily to answer messages.</span></p>
-          <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Playtest the game!</b> - <span
+          <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Playtest the game</b> - <span
             className={"poppins-regular"}>We will often perform playtests.</span></p>
-          <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Watch as we do!</b> - <span
+          <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Watch as we do</b> - <span
             className={"poppins-regular"}>We will occasionally stream our work.</span></p>
         </div>
         <div className="custom-shape-divider-bottom-1721854866-g">
@@ -128,25 +128,24 @@ export default function Home() {
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Art Director</h2>
             <p className={"poppins-regular col1d1d1b text-lg leading-7 max-w-md mt-3"}>Giorgio is an art director &
               front-end
-              specialist with a background in Interaction Design who specializes in UI Programming and UX Design.</p>
+              specialist with a background in interaction design, who focuses on UI programming and UX design.</p>
           </div>
           <div className={"flex flex-col items-center"}>
             <Image src="/Soren.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Søren</h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Tech Director</h2>
             <p className={"poppins-regular col1d1d1b text-lg leading-7 max-w-md mt-3"}>Søren is a developer and
-              technical
-              director with a background in cross-media studies and a deep interest in emergent gameplay and
+              technical director with a background in cross-media studies and a deep interest in emergent gameplay and
               replayability. </p>
           </div>
         </div>
-        <div className={"mt-20"}>
+        <div className={"mt-28"}>
           <div className={"maxWidth90pc"}><h1 className={clsx(title(), "auxMono notBold col1d1d1b")}>We're not alone in
             this!</h1></div>
-          <h2 className={clsx(subtitle(), "poppins-regular col1d1d1b advisorySect maxWidth90pc mt-10")}>Along with our
-            dynamic
-            community and our
-            talented freelancers, we are building a great board of advisors:</h2>
+          <h2 className={clsx(subtitle(), "poppins-regular col1d1d1b advisorySect maxWidth90pc mt-10")}>Together with
+            our
+            dynamic community and talented freelancers, we are honored to be advised by experts in the games
+            industry. Our trustworthy, multidisciplinary, and diverse board of advisors is made up of:</h2>
         </div>
         <div className={"flex items-start justify-center mt-20 mb-40 advisorFlex flex-wrap"}>
           <div className={"flex flex-col items-center"}>
@@ -178,10 +177,8 @@ export default function Home() {
             <div className={"h-16 flex flex-col justify-center"}>
               <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>CEO @ Trinor Entertainment</h2>
             </div>
-            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>Stella is an expert in independent
-              game
-              business and design management, dedicated to fostering meritocratic teams who know no borders,
-              built upon ambitious dreams and passionate creatives.</p>
+            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>Recognized as a future growth
+              adventure by the Danish Minister of Culture and supported by the Danish Innovation Fund, Trinor Entertainment is an emerging Danish game development startup.</p>
           </div>
           <div className={"flex flex-col items-center"}>
             <Image src="/QuestionMark.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
@@ -200,14 +197,14 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div className="inline-block w-full text-center justify-center lineHeightLoose mt-24 zIndex4">
+      <div className="inline-block w-full text-center justify-center lineHeightLoose mt-20 zIndex4">
         <h1 className={clsx(title(), "auxMono notBold daff01")}>We are supported by</h1>
         <div className={"supporters"}>
           <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="0" />
         </div>
         <div className="custom-shape-divider-bottom-1721854866-g">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 332.25 60.72 537.25 30.72 932.25 40.72 1200 0z" className="shape-fill"></path>
+            <path d="M1200 0L0 0 332.25 40.72 537.25 20.72 832.25 80.72 1200 0z" className="shape-fill"></path>
           </svg>
         </div>
       </div>
