@@ -30,6 +30,19 @@
     margin-top: -140px;
 }
 
+.custom-shape-divider-bottom-1721854866-gr {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    fill: #daff01 !important;
+    z-index: 3;
+    position: absolute;
+}
+
+.supportersMargin {
+    margin-top: 10rem;
+}
+
 .col1d1d1b {
     color: #1d1d1b !important;
 }
@@ -349,5 +362,9 @@
 
     .negativeMarginXL {
         margin-top: -9rem !important;
+    }
+
+    .supportersMargin {
+        margin-top: 5rem;
     }
 }

@@ -191,13 +191,13 @@ export default function Home() {
               have experience in game development and would like to give your help, we'd love to hear from you!</p>
           </div>
         </div>
-        <div className="custom-shape-divider-bottom-1721854866">
+        <div className="custom-shape-divider-bottom-1721854866-gr">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M1200 0L0 0 332.25 60.72 537.25 30.72 932.25 40.72 1200 0z" className="shape-fill"></path>
           </svg>
         </div>
       </div>
-      <div className="inline-block w-full text-center justify-center lineHeightLoose mt-20 zIndex4">
+      <div className="inline-block w-full text-center justify-center lineHeightLoose supportersMargin zIndex4">
         <h1 className={clsx(title(), "auxMono notBold daff01")}>We are supported by</h1>
         <div className={"supporters"}>
           <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="0" />
