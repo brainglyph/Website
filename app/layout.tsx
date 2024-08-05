@@ -48,15 +48,20 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
-      <body
-        className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
-      >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
+    <head>
+      <meta property="og:title" content="We're making games you can't stop thinking about" />
+      <meta property="og:description"
+            content="brainglyph is an independent game development duo working on Project Repo." />
+      <meta property="og:image" content="/rect.png"/>
+    </head>
+    <body
+      className={clsx(
+        "min-h-screen bg-background font-sans antialiased",
+        fontSans.variable
+      )}
+    >
+    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+      <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className={clsx("pt-16 flex-grow bg1d1d1b")}>
               {children}
