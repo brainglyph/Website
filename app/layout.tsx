@@ -52,7 +52,7 @@ export default function RootLayout({
       <meta property="og:title" content="We're making games you can't stop thinking about" />
       <meta property="og:description"
             content="brainglyph is an independent game development duo working on Project Repo." />
-      <meta property="og:image" content="/rect.png"/>
+      <meta property="og:image" content="/og_rect.png"/>
     </head>
     <body
       className={clsx(
