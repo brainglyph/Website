@@ -68,18 +68,18 @@ export default function Home() {
         />
         </span>
       </div>
-      <div className="custom-shape-divider-top-1721854402">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M1200 0L0 0 292.25 60.72 537.25 30.72 892.25 80.72 1200 0z" className="shape-fill"></path>
+      <div className="custom-shape-divider-top-1721854402 littleNegativeTop">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" preserveAspectRatio="none">
+          <path d="M333.105 104.653L0 40.5698V0H1200V40.5698L924.558 149.477L604.292 40.5698L333.105 104.653Z" className="shape-fill"></path>
         </svg>
       </div>
       <div className={"PRDiv"}>
         <h1 className={"morne zIndex4 PRTitle maxWidth90pc"}>Project Repo</h1>
         <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>,
           a knowledge-based action roguelite.</h2>
-        <div className="custom-shape-divider-bottom-1721854866">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 332.25 60.72 537.25 30.72 932.25 40.72 1200 0z" className="shape-fill"></path>
+        <div className="custom-shape-divider-bottom-1721854866 littleNegativeBottom">
+          <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1022 24.5L1200 76.9068L1200 120.477L0 120.476L3.54672e-06 76.9067L198 -3.67428e-06L490.5 76.9067L1022 24.5Z" className="shape-fill"></path>
           </svg>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function Home() {
         <br className={"noMob"}></br>
         <br></br>
         <h1 className={clsx("auxMono daff01 text-4xl font-medium maxWidth90pc mb-10")}>Community perks include:</h1>
-        <div className={"maxWidth90pc mobilePerks mb-40"}>
+        <div className={"maxWidth90pc mobilePerks mb-52"}>
           <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Have a chat with us</b> - <span
             className={"poppins-regular"}>We will take some time daily to answer messages.</span></p>
           <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Playtest the game</b> - <span
@@ -105,9 +105,11 @@ export default function Home() {
           <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Watch as we do</b> - <span
             className={"poppins-regular"}>We will occasionally stream our work.</span></p>
         </div>
-        <div className="custom-shape-divider-bottom-1721854866-g">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 332.25 60.72 537.25 30.72 932.25 40.72 1200 0z" className="shape-fill"></path>
+        <div className="custom-shape-divider-bottom-1721854866-g littleNegativeBottom">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90" preserveAspectRatio="none">
+            <path
+              d="M986.5 15L1200 52.9068L1200 93.4766L0 93.4765L3.54672e-06 52.9067L324 0.5L748.5 52.9068L986.5 15Z"
+              className="shape-fill"></path>
           </svg>
         </div>
       </div>
@@ -178,7 +180,17 @@ export default function Home() {
               <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>CEO @ Trinor Entertainment</h2>
             </div>
             <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>Recognized as a future growth
-              adventure by the Danish Minister of Culture and supported by the Danish Innovation Fund, Trinor Entertainment is an emerging Danish game development startup.</p>
+              adventure by the Danish Minister of Culture and supported by the Danish Innovation Fund, Trinor
+              Entertainment is an emerging Danish game development startup.</p>
+          </div>
+          <div className={"flex flex-col items-center"}>
+            <Image src="/Helena.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Helena Sokol</h1>
+            <div className={"h-16 flex flex-col justify-center mt-6 helenaMargin"}>
+              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold helenaFont")}>Producer @ Flashbulb Games <br></br> Founder @ Danish Game Producers' Network <br></br> Board
+                Member @ Games Denmark</h2>
+            </div>
+            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl mt-6 helenaMargin"}>Helena is a producer at Flashbulb Games with years of experience and a passion for project management, organization, and creative production. She has been involved in several projects, both through student organization and work.</p>
           </div>
           <div className={"flex flex-col items-center"}>
             <Image src="/QuestionMark.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
@@ -191,9 +203,10 @@ export default function Home() {
               have experience in game development and would like to give your help, we'd love to hear from you!</p>
           </div>
         </div>
-        <div className="custom-shape-divider-bottom-1721854866-gr">
+        <div className="custom-shape-divider-bottom-1721854866-gr littleNegativeTop">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 332.25 60.72 537.25 30.72 932.25 40.72 1200 0z" className="shape-fill"></path>
+            <path d="M333.105 104.653L0 40.5698V0H1200V40.5698L924.558 80.477L604.292 40.5698L333.105 104.653Z"
+                  className="shape-fill"></path>
           </svg>
         </div>
       </div>
@@ -202,9 +215,9 @@ export default function Home() {
         <div className={"supporters"}>
           <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="0" />
         </div>
-        <div className="custom-shape-divider-bottom-1721854866-g">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 332.25 40.72 537.25 20.72 832.25 80.72 1200 0z" className="shape-fill"></path>
+        <div className="custom-shape-divider-bottom-1721854866-g littleNegativeBottom">
+          <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90" preserveAspectRatio="none">
+            <path d="M986.5 15L1200 52.9068L1200 93.4766L0 93.4765L3.54672e-06 52.9067L324 0.5L748.5 52.9068L986.5 15Z" className="shape-fill"></path>
           </svg>
         </div>
       </div>

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.littleNegativeTop {
+    margin-top: -2px !important;
+}
+
+.littleNegativeBottom {
+    margin-bottom: -2px !important;
+}
+
 .custom-shape-divider-top-1721854402 {
     width: 100%;
     overflow: hidden;
@@ -14,7 +22,6 @@
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(180deg);
     fill: #1d1d1b !important;
     z-index: 3;
     margin-top: -140px;
@@ -24,7 +31,6 @@
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(180deg);
     fill: #daff01 !important;
     z-index: 3;
     margin-top: -140px;
@@ -40,7 +46,7 @@
 }
 
 .supportersMargin {
-    margin-top: 10rem;
+    margin-top: 13rem;
 }
 
 .col1d1d1b {
@@ -365,6 +371,17 @@
     }
 
     .supportersMargin {
-        margin-top: 5rem;
+        margin-top: 9rem;
     }
 }
+
+@media (max-width: 600px) {
+    .helenaMargin {
+        margin-top: 3rem;
+    }
+
+    .helenaFont {
+        font-size: 17px;
+    }
+}
+
