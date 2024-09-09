@@ -70,7 +70,8 @@ export default function Home() {
       </div>
       <div className="custom-shape-divider-top-1721854402 littleNegativeTop">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" preserveAspectRatio="none">
-          <path d="M333.105 104.653L0 40.5698V0H1200V40.5698L924.558 149.477L604.292 40.5698L333.105 104.653Z" className="shape-fill"></path>
+          <path d="M333.105 104.653L0 40.5698V0H1200V40.5698L924.558 149.477L604.292 40.5698L333.105 104.653Z"
+                className="shape-fill"></path>
         </svg>
       </div>
       <div className={"PRDiv"}>
@@ -78,8 +79,11 @@ export default function Home() {
         <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Project Repo</b>,
           a knowledge-based action roguelite.</h2>
         <div className="custom-shape-divider-bottom-1721854866 littleNegativeBottom">
-          <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1022 24.5L1200 76.9068L1200 120.477L0 120.476L3.54672e-06 76.9067L198 -3.67428e-06L490.5 76.9067L1022 24.5Z" className="shape-fill"></path>
+          <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+               preserveAspectRatio="none">
+            <path
+              d="M1022 24.5L1200 76.9068L1200 120.477L0 120.476L3.54672e-06 76.9067L198 -3.67428e-06L490.5 76.9067L1022 24.5Z"
+              className="shape-fill"></path>
           </svg>
         </div>
       </div>
@@ -151,6 +155,16 @@ export default function Home() {
         </div>
         <div className={"flex items-start justify-center mt-20 mb-40 advisorFlex flex-wrap"}>
           <div className={"flex flex-col items-center"}>
+            <Image src="/soeren.jpg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Søren Lundgaard</h1>
+            <div className={"h-16 flex flex-col justify-center"}>
+              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>CEO @ Ghost Ship Games</h2>
+            </div>
+            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>With a strong background in game
+              development and leadership, Søren excels in innovation, player engagement, and fostering creative,
+              community-focused projects, such as Deep Rock Galactic.</p>
+          </div>
+          <div className={"flex flex-col items-center"}>
             <Image src="/Miguel.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Miguel Sicart</h1>
             <div className={"h-24 flex flex-col justify-center"}>
@@ -187,20 +201,24 @@ export default function Home() {
             <Image src="/Helena.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Helena Sokol</h1>
             <div className={"h-16 flex flex-col justify-center mt-6 helenaMargin"}>
-              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold helenaFont")}>Producer @ Flashbulb Games <br></br> Founder @ Danish Game Producers' Network <br></br> Board
+              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold helenaFont")}>Producer @ Flashbulb
+                Games <br></br> Founder @ Danish Game Producers' Network <br></br> Board
                 Member @ Games Denmark</h2>
             </div>
-            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl mt-6 helenaMargin"}>Helena is a producer at Flashbulb Games with years of experience and a passion for project management, organization, and creative production. She has been involved in several projects, both through student organization and work.</p>
+            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl mt-6 helenaMargin"}>Helena is a producer
+              at Flashbulb Games with years of experience and a passion for project management, organization, and
+              creative production. She has been involved in several projects, both through student organization and
+              work.</p>
           </div>
           <div className={"flex flex-col items-center"}>
-            <Image src="/QuestionMark.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>TBA</h1>
+            <Image src="/brian.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Brian Martin Nielsen</h1>
             <div className={"h-16 flex flex-col justify-center"}>
-              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>We are looking for you!</h2>
+              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>CEO @ Kaiju Production</h2>
             </div>
-            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>We are on the lookout for more
-              advisors. If you
-              have experience in game development and would like to give your help, we'd love to hear from you!</p>
+            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>Brian’s focus is to lead people and
+              teams to execute on their vision. His goal is ensuring each project reaches and unlocks its full
+              potential, pushing boundaries to create memorable games.</p>
           </div>
         </div>
         <div className="custom-shape-divider-bottom-1721854866-gr littleNegativeTop">
@@ -216,8 +234,10 @@ export default function Home() {
           <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="0" />
         </div>
         <div className="custom-shape-divider-bottom-1721854866-g littleNegativeBottom">
-          <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90" preserveAspectRatio="none">
-            <path d="M986.5 15L1200 52.9068L1200 93.4766L0 93.4765L3.54672e-06 52.9067L324 0.5L748.5 52.9068L986.5 15Z" className="shape-fill"></path>
+          <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90"
+               preserveAspectRatio="none">
+            <path d="M986.5 15L1200 52.9068L1200 93.4766L0 93.4765L3.54672e-06 52.9067L324 0.5L748.5 52.9068L986.5 15Z"
+                  className="shape-fill"></path>
           </svg>
         </div>
       </div>
