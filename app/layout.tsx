@@ -52,7 +52,14 @@ export default function RootLayout({
       <meta property="og:title" content="We're making games you can't stop thinking about" />
       <meta property="og:description"
             content="brainglyph is an independent game development duo working on Project Repo." />
-      <meta property="og:image" content="/og_rect.png"/>
+      <meta property="og:image" content="https://i.postimg.cc/SsXg7xwy/animated-card.gif" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="localhost-og-checker.vercel.app" />
+      <meta property="twitter:url" content="https://localhost-og-checker.vercel.app/66df2d6897123e7b91ed8f5d" />
+      <meta name="twitter:title" content="We're making games you can't stop thinking about" />
+      <meta name="twitter:description"
+            content="brainglyph is an independent game development duo working on Project Repo." />
+      <meta name="twitter:image" content="https://i.postimg.cc/SsXg7xwy/animated-card.gif" />
     </head>
     <body
       className={clsx(
@@ -62,13 +69,13 @@ export default function RootLayout({
     >
     <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
       <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className={clsx("pt-16 flex-grow bg1d1d1b")}>
-              {children}
-            </main>
-          </div>
-        </Providers>
-      </body>
+        <Navbar />
+        <main className={clsx("pt-16 flex-grow bg1d1d1b")}>
+          {children}
+        </main>
+      </div>
+    </Providers>
+    </body>
     </html>
   );
 }
