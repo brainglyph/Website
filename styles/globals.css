@@ -46,7 +46,7 @@
 }
 
 .supportersMargin {
-    margin-top: 13rem;
+    margin-top: 300px;
 }
 
 .col1d1d1b {
@@ -246,9 +246,9 @@
     position: relative;
     width: 100%;
     height: auto;
-    padding-top: 130px;
+    padding-top: 400px;
     margin-top: -250px;
-    background-image: url("/PR.png");
+    background-image: url("/keyart.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -260,17 +260,18 @@
     letter-spacing: 2px;
     color: #ffd10a;
     font-weight: 700;
-    margin-top: 150px;
-    margin-bottom: 5px;
+    margin-top: 100px;
     text-align: center;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .PRSubtitle {
     font-size: 20px;
     letter-spacing: 2px;
     color: #ffd10a;
-    margin-bottom: 180px;
+    margin-bottom: 450px;
     text-align: center;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 1);
 }
 
 .sectionImageBlack {
@@ -295,12 +296,16 @@
         margin-top: -50px;
     }
 
+    .PRDiv {
+        background-position: left -200px bottom -100px;
+    }
+
     .PRTitle {
         font-size: 60px;
         letter-spacing: 2px;
         color: #ffd10a;
         font-weight: 700;
-        margin-top: 150px;
+        margin-top: -60px;
         margin-bottom: 30px;
         text-align: center;
     }
@@ -309,7 +314,7 @@
         font-size: 20px;
         letter-spacing: 2px;
         color: #ffd10a;
-        margin-bottom: 170px;
+        margin-bottom: 200px;
         text-align: center;
     }
 
