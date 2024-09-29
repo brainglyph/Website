@@ -95,7 +95,7 @@ export default function Home() {
           Repo</h2>
         <br className={"noMob"}></br>
         <br></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/kybRqJfH"}
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
                 target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Join our Discord server!</span></Button>
         <br></br>
         <br className={"noMob"}></br>
@@ -130,7 +130,8 @@ export default function Home() {
         <div className={"flex items-start justify-center mt-16 teamFlex"}>
           <div className={"flex flex-col items-center"}>
             <Image src="/Gio.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Giorgio</h1>
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/giorgio-perri/"} target={"_blank"}>Giorgio</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Art Director</h2>
             <p className={"poppins-regular col1d1d1b text-lg leading-7 max-w-md mt-3"}>Giorgio is an art director &
               front-end
@@ -138,7 +139,8 @@ export default function Home() {
           </div>
           <div className={"flex flex-col items-center"}>
             <Image src="/Soren.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Søren</h1>
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/sskouv/"} target={"_blank"}>Søren</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Tech Director</h2>
             <p className={"poppins-regular col1d1d1b text-lg leading-7 max-w-md mt-3"}>Søren is a developer and
               technical director with a background in cross-media studies and a deep interest in emergent gameplay and
@@ -249,9 +251,9 @@ export default function Home() {
           possible!</h2>
         <br></br>
         <div className={"contactButtons maxWidth90pc"}>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/kybRqJfH"}
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
                   target={"_blank"}><DiscordIcon /> Join our Discord server!</Button>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:hello@brainglyph.com"}
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:admin@brainglyph.com"}
                   target={"_blank"}>Shoot us an email!</Button>
         </div>
       </div>
