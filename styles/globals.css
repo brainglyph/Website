@@ -260,7 +260,7 @@
     letter-spacing: 2px;
     color: #ffd10a;
     font-weight: 700;
-    margin-top: 100px;
+    margin-top: 0px;
     text-align: center;
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
@@ -269,7 +269,7 @@
     font-size: 20px;
     letter-spacing: 2px;
     color: #ffd10a;
-    margin-bottom: 450px;
+    margin-bottom: 300px;
     text-align: center;
     text-shadow: 0 0 15px rgba(0, 0, 0, 1);
 }
