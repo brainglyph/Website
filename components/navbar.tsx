@@ -45,9 +45,9 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500 iconFill" />
-          </Link>
+          {/*<Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>*/}
+          {/*  <TwitterIcon className="text-default-500 iconFill" />*/}
+          {/*</Link>*/}
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500 iconFill" />
           </Link>
@@ -58,9 +58,9 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-          <TwitterIcon className="text-default-500 iconFill" />
-        </Link>
+        {/*<Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>*/}
+        {/*  <TwitterIcon className="text-default-500 iconFill" />*/}
+        {/*</Link>*/}
         <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
           <DiscordIcon className="text-default-500 iconFill" />
         </Link>

@@ -18,6 +18,10 @@
     z-index: 3;
 }
 
+.fontMedium {
+    font-size: 26pt !important;
+}
+
 .custom-shape-divider-bottom-1721854866 {
     width: 100%;
     overflow: hidden;

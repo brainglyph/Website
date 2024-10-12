@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "brainglyph",
-  description: "We're making games you can't stop thinking about",
+  description: "We're making games you can't stop thinking followus",
   navItems: [
     {
       label: "Home",
@@ -22,7 +22,7 @@ export const siteConfig = {
     },
     {
       label: "About",
-      href: "/about",
+      href: "/followus",
     },
   ],
   navMenuItems: [
