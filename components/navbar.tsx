@@ -45,22 +45,13 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          {/*<Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>*/}
-          {/*  <TwitterIcon className="text-default-500 iconFill" />*/}
-          {/*</Link>*/}
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500 iconFill" />
           </Link>
-          {/*<Link isExternal aria-label="Github" href={siteConfig.links.github}>*/}
-          {/*  <GithubIcon className="text-default-500 iconFill" />*/}
-          {/*</Link>*/}
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        {/*<Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>*/}
-        {/*  <TwitterIcon className="text-default-500 iconFill" />*/}
-        {/*</Link>*/}
         <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
           <DiscordIcon className="text-default-500 iconFill" />
         </Link>

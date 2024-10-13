@@ -19,7 +19,9 @@
 }
 
 .fontMedium {
-    font-size: 26pt !important;
+    font-size: 20pt !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .custom-shape-divider-bottom-1721854866 {

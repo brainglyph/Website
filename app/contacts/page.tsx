@@ -64,23 +64,34 @@ export default function FollowUsPage() {
         </svg>
       </div>
       <div className="inline-block w-full text-center justify-center lineHeightLoose mt-14 zIndex2 relative">
-        <h1 className={clsx(title(), "auxMono notBold daff01")}>Follow our journey</h1>
-        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Stay updated and be part of the
-          development of HeliOS</h2>
+        <h1 className={clsx(title(), "auxMono notBold daff01")}>Get in touch</h1>
+        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Are you interested in investing or
+          have any questions about HeliOS?</h2>
         <br className={"noMob"}></br>
-        <br></br>
         <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
-                target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Join our Discord server!</span></Button>
+                target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Contact us on Discord!</span></Button>
         <div className={"mb-6"}></div>
         <Button as={Link} className={"buttonCTA auxMono"}
-                href={"https://www.youtube.com/channel/UCeoSz0hPS2aMPHh3hiE6czg"}
-                target={"_blank"}><YoutubeIcon /> <span className={"ml-2"}>Subscribe to our channel!</span></Button>
+                href={"mailto:admin@brainglyph.com"}
+                target={"_blank"}><span className={"ml-2"}>Shoot us an email!</span></Button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h1 className={clsx(title(), "auxMono notBold daff01")}>Digital goods</h1>
+        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Here you can download media assets and
+          our slide decks</h2>
+        <br className={"noMob"}></br>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"#"}
+                target={"_blank"}><span className={"ml-2"}>Download press and media kit</span></Button>
         <div className={"mb-6"}></div>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://www.tiktok.com/@playhelios"}
-                target={"_blank"}><TikTokIcon /> <span className={"ml-2"}>Follow us on TikTok!</span></Button>
+        <Button as={Link} className={"buttonCTA auxMono"}
+                href={"mailto:admin@brainglyph.com"}
+                target={"_blank"}><span className={"ml-2"}>Download our pitch deck</span></Button>
         <br></br>
         <br></br>
-        <Link href={"/"}><h1 className={clsx(title(), "fontMedium auxMono notBold daff01")}>← Back to homepage</h1></Link>
+        <br></br>
+        <Link href={"/"}><h1 className={clsx(title(), "fontMedium auxMono notBold daff01")}>← Back to homepage</h1>
+        </Link>
         <br className={"noMob"}></br>
         <br></br>
         <div className={"maxWidth90pc mobilePerks mb-40"}>
@@ -97,10 +108,10 @@ export default function FollowUsPage() {
 
       <div
         className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose pb-6">
-          <div className={"mt-7 maxWidth90pc"}><h1 className={clsx("auxMono col1d1d1b text-xs")}>This website is made
-            and
-            maintained with ♥ by us, brainglyph!</h1></div>
-        </div>
+        <div className={"mt-7 maxWidth90pc"}><h1 className={clsx("auxMono col1d1d1b text-xs")}>This website is made
+          and
+          maintained with ♥ by us, brainglyph!</h1></div>
+      </div>
     </section>
-);
+  );
 }
