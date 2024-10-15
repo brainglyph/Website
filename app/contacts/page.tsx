@@ -81,12 +81,11 @@ export default function FollowUsPage() {
         <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Here you can download media assets and
           our slide decks</h2>
         <br className={"noMob"}></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"#"}
+        <Button as={Link} className={"buttonCTA auxMono"} href={"/files/PressKit.zip"}
                 target={"_blank"}><span className={"ml-2"}>Download press and media kit</span></Button>
         <div className={"mb-6"}></div>
-        <Button as={Link} className={"buttonCTA auxMono"}
-                href={"mailto:admin@brainglyph.com"}
-                target={"_blank"}><span className={"ml-2"}>Download our pitch deck</span></Button>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"/files/BusinessPitchDeck.pdf"}
+                target={"_blank"}><span className={"ml-2"}>Download our business deck</span></Button>
         <br></br>
         <br></br>
         <br></br>
