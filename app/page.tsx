@@ -76,7 +76,7 @@ export default function Home() {
       </div>
       <div className={"PRDiv"}>
         <Image src="/heliosLogo.png" alt="HeliosLogo" width="2000" height="0" className={"zIndex4 HeliosLogo maxWidth90pc"} />
-        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Heli.os</b>,
+        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>heli.os</b>,
           a knowledge-based action roguelite.</h2>
         <div className="custom-shape-divider-bottom-1721854866 littleNegativeBottom">
           <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
