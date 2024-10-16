@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Heli.os",
-  description: "We're making games you can't stop thinking about",
+  description: "An action roguelike where knowledge is power.",
   navItems: [
     {
       label: "Home",

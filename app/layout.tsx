@@ -49,17 +49,17 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
     <head>
-      <meta property="og:title" content="We're making games you can't stop thinking about" />
+      <meta property="og:title" content="Heli.os" />
       <meta property="og:description"
-            content="brainglyph is an independent game development duo working on Project Repo." />
-      <meta property="og:image" content="https://i.postimg.cc/SsXg7xwy/animated-card.gif" />
+            content="An action roguelike where knowledge is power." />
+      <meta property="og:image" content="https://i.ibb.co/BsZcfM6/Capsule-Art.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="localhost-og-checker.vercel.app" />
       <meta property="twitter:url" content="https://localhost-og-checker.vercel.app/66df2d6897123e7b91ed8f5d" />
-      <meta name="twitter:title" content="We're making games you can't stop thinking about" />
+      <meta name="twitter:title" content="Heli.os" />
       <meta name="twitter:description"
-            content="brainglyph is an independent game development duo working on Project Repo." />
-      <meta name="twitter:image" content="https://i.postimg.cc/SsXg7xwy/animated-card.gif" />
+            content="An action roguelike where knowledge is power." />
+      <meta name="twitter:image" content="https://i.ibb.co/BsZcfM6/Capsule-Art.png" />
     </head>
     <body
       className={clsx(
