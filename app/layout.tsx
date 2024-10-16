@@ -52,14 +52,14 @@ export default function RootLayout({
       <meta property="og:title" content="We're making games you can't stop thinking about" />
       <meta property="og:description"
             content="brainglyph is an independent game development duo working on heli.os." />
-      <meta property="og:image" content="https://i.ibb.co/rvvV5DH/animated-card.gif" />
+      <meta property="og:image" content="https://s1.gifyu.com/images/SBAZG.gif" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="localhost-og-checker.vercel.app" />
       <meta property="twitter:url" content="https://localhost-og-checker.vercel.app/66df2d6897123e7b91ed8f5d" />
       <meta name="twitter:title" content="We're making games you can't stop thinking about" />
       <meta name="twitter:description"
             content="brainglyph is an independent game development duo working on heli.os." />
-      <meta name="twitter:image" content="https://i.ibb.co/rvvV5DH/animated-card.gif" />
+      <meta name="twitter:image" content="https://s1.gifyu.com/images/SBAZG.gif" />
     </head>
     <body
       className={clsx(
