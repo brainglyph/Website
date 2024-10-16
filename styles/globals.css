@@ -251,9 +251,7 @@
 .PRDiv {
     position: relative;
     width: 100%;
-    height: auto;
-    padding-top: 250px;
-    margin-top: -250px;
+    height: 100%;
     background-image: url("/keyart.webp");
     background-size: cover;
     background-position: center;
@@ -262,7 +260,11 @@
 }
 
 .HeliosLogo {
-    width: 700px;
+    width: 1200px;
+    position: relative;
+    transform: translate(0, -50%);
+    left: 0;
+    top: 50%;
 }
 
 .PRSubtitle {
@@ -272,6 +274,8 @@
     margin-bottom: 200px;
     text-align: center;
     text-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    position: relative;
+    top: 100px;
 }
 
 .sectionImageBlack {
@@ -297,8 +301,7 @@
     }
 
     .PRDiv {
-        padding-top: 300px;
-        background-position: left -200px bottom -100px;
+        background-position: left -200px bottom 0;
     }
 
     .PRTitle {
