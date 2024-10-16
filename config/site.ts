@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "brainglyph",
-  description: "We're making games you can't stop thinking followus",
+  name: "Heli.os",
+  description: "We're making games you can't stop thinking about",
   navItems: [
     {
       label: "Home",
@@ -22,7 +22,7 @@ export const siteConfig = {
     },
     {
       label: "About",
-      href: "/followus",
+      href: "/about",
     },
   ],
   navMenuItems: [
