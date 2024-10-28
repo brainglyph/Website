@@ -90,12 +90,10 @@ export default function Home() {
       <div className="inline-block w-full text-center justify-center lineHeightLoose mt-14 zIndex2 relative">
         <h1 className={clsx(title(), "auxMono notBold daff01")}>Join our community</h1>
         <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Stay updated and be part of the
-          development of
-          Project
-          Repo</h2>
+          development of Heli.os</h2>
         <br className={"noMob"}></br>
         <br></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
                 target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Join our Discord server!</span></Button>
         <br></br>
         <br className={"noMob"}></br>
@@ -251,7 +249,7 @@ export default function Home() {
           possible!</h2>
         <br></br>
         <div className={"contactButtons maxWidth90pc"}>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
                   target={"_blank"}><DiscordIcon /> Join our Discord server!</Button>
           <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:admin@brainglyph.com"}
                   target={"_blank"}>Shoot us an email!</Button>

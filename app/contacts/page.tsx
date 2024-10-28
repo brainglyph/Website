@@ -68,7 +68,7 @@ export default function FollowUsPage() {
         <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Are you interested in investing or
           have any questions about HeliOS?</h2>
         <br className={"noMob"}></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
                 target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Contact us on Discord!</span></Button>
         <div className={"mb-6"}></div>
         <Button as={Link} className={"buttonCTA auxMono"}

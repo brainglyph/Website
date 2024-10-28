@@ -69,7 +69,7 @@ export default function FollowUsPage() {
           development of HeliOS</h2>
         <br className={"noMob"}></br>
         <br></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/qyXVyjFCsm"}
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
                 target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Join our Discord server!</span></Button>
         <div className={"mb-6"}></div>
         <Button as={Link} className={"buttonCTA auxMono"}
