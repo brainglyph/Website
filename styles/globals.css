@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.fullHeight {
+    height: 110vh;
+}
+
+.enlarge {
+    transform: scale(1.3) translateX(-20px) translateY(30px);
+}
+
 .littleNegativeTop {
     margin-top: -2px !important;
 }
