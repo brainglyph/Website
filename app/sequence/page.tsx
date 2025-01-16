@@ -10,7 +10,7 @@ import { Link } from "@nextui-org/link";
 import { DiscordIcon, TikTokIcon, YoutubeIcon } from "@/components/icons";
 
 export default function FollowUsPage() {
-  const glyphArray = ["d", "A", "f", "F", "=", "!"];
+  const glyphArray = ["☐", "C", "D", "H", "I", "J", "3", "4"];
   const [currentGlyph, setCurrentGlyph] = useState(glyphArray[0]);
   const currentGlyphRef = useRef(currentGlyph);
   const [showImage, setShowImage] = useState(false);
