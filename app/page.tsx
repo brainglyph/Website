@@ -230,8 +230,9 @@ export default function Home() {
       </div>
       <div className="inline-block w-full text-center justify-center lineHeightLoose supportersMargin zIndex4">
         <h1 className={clsx(title(), "auxMono notBold daff01")}>We are supported by</h1>
-        <div className={"supporters"}>
+        <div className={"supporters flex flex-row gap-0 maxWidth70pc"}>
           <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="0" />
+          <Image className={"pt-10 pb-10"} src="/Innovationsfonden.png" alt="Ast Black Image" width="500" height="100" />
         </div>
         <div className="custom-shape-divider-bottom-1721854866-g littleNegativeBottom">
           <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90"

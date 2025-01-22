@@ -232,6 +232,12 @@
     margin-right: auto;
 }
 
+.maxWidth70pc {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .maxWidth80pc {
     max-width: 80%;
     margin-left: auto;
