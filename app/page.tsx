@@ -2,7 +2,7 @@
 
 import { Link } from "@nextui-org/link";
 import { title, subtitle } from "@/components/primitives";
-import { DiscordIcon, GithubIcon } from "@/components/icons";
+import { DiscordIcon, EmailIcon, GithubIcon, TikTokIcon, YoutubeIcon } from "@/components/icons";
 import clsx from "clsx";
 import Image from "next/image";
 
@@ -76,7 +76,7 @@ export default function Home() {
       </div>
       <div className={"PRDiv"}>
         <Image src="/heliosLogo.png" alt="HeliosLogo" width="2000" height="0" className={"zIndex4 HeliosLogo maxWidth90pc"} />
-        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>heli.os</b>,
+        <h2 className={"firaCode zIndex4 PRSubtitle maxWidth90pc"}>We are working on our first game, <b>Heli.os</b>,
           a knowledge-based action roguelite.</h2>
         <div className="custom-shape-divider-bottom-1721854866 littleNegativeBottom">
           <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -88,17 +88,29 @@ export default function Home() {
         </div>
       </div>
       <div className="inline-block w-full text-center justify-center lineHeightLoose mt-14 zIndex2 relative">
-        <h1 className={clsx(title(), "auxMono notBold daff01")}>Join our community</h1>
-        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Stay updated and be part of the
-          development of Heli.os</h2>
+        <h1 className={clsx(title(), "auxMono notBold daff01")}>Some handy links</h1>
+        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Follow our journey on
+          YouTube and TikTok, and contact us through
+          Discord* or e-mail!</h2>
         <br className={"noMob"}></br>
         <br></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
-                target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Join our Discord server!</span></Button>
+        <Button as={Link} className={"buttonCTA auxMono"}
+                href={"https://www.youtube.com/channel/UCeoSz0hPS2aMPHh3hiE6czg"}
+                target={"_blank"}><YoutubeIcon /> <span className={"ml-2"}>Youtube.com/@brainglyph</span></Button>
+        <div className={"mb-6"}></div>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://www.tiktok.com/@playheli.os"}
+                target={"_blank"}><TikTokIcon /> <span className={"ml-2"}>Tiktok.com/@playheli.os</span></Button>
+        <div className={"mb-6"}></div>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"mailto:hello@brainglyph.com"}
+                target={"_blank"}><EmailIcon /><span className={"ml-2"}>hello@brainglyph.com</span></Button>
+        <div className={"mb-6"}></div>
+        <Button as={Link} className={"buttonCTA auxMono"}
+                href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
+                target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>OurDiscordServer.com</span></Button>
+        <h2 className={clsx("text-l poppins-regular daff01 mt-3 maxWidth90pc")}>*Yes, we do own this domain :D</h2>
+
         <br></br>
-        <br className={"noMob"}></br>
-        <br></br>
-        <h1 className={clsx("auxMono daff01 text-4xl font-medium maxWidth90pc mb-10")}>Community perks include:</h1>
+        <h1 className={clsx("auxMono daff01 text-4xl font-medium maxWidth90pc mb-10")}>As a member of the Community, you can:</h1>
         <div className={"maxWidth90pc mobilePerks mb-52"}>
           <p className={clsx("text-xl auxMono daff01 mt-5")}><b>Have a chat with us</b> - <span
             className={"poppins-regular"}>We will take some time daily to answer messages.</span></p>
@@ -251,9 +263,9 @@ export default function Home() {
         <br></br>
         <div className={"contactButtons maxWidth90pc"}>
           <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
-                  target={"_blank"}><DiscordIcon /> Join our Discord server!</Button>
+                  target={"_blank"}><DiscordIcon /> Join our Discord server</Button>
           <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:admin@brainglyph.com"}
-                  target={"_blank"}>Shoot us an email!</Button>
+                  target={"_blank"}>Shoot us an email</Button>
         </div>
       </div>
       <div
