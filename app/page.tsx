@@ -53,6 +53,7 @@ export default function Home() {
         <span className={clsx("glyph col1d1d1b auxMono", showImage && "invisible")}>{currentGlyph}{showImage &&
           <Image src="/astBlack.svg" alt="Ast Black Image" width="135" height="0" className={"astGlyph"} />
         }</span>
+        <Image src="/Brain.png" alt={"Brainglyph logo for google text result image"} width="130" height="0" className={"mx-auto mb-10 hidden"} />
         <Image src="/logoBlackEmpty.svg" alt={""} width="130" height="0" className={"mx-auto mb-10"} />
         <h1 className={clsx(title(), "auxMono notBold col1d1d1b")}>We're making games</h1>
         <span className={clsx(title(), "auxMono notBold spantype")}><Typewriter
