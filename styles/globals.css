@@ -297,6 +297,19 @@
     margin-top: 100px;
 }
 
+.job-list {
+    margin-left: 2rem;
+}
+
+.job-list li{
+    margin-bottom: 10px;
+}
+
+li::marker {
+    display: block;
+    color: #daff01;
+}
+
 @media (max-width: 1000px) {
     .noMob {
         display: none;
