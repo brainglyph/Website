@@ -99,8 +99,8 @@ export default function Home() {
                 href={"https://www.youtube.com/channel/UCeoSz0hPS2aMPHh3hiE6czg"}
                 target={"_blank"}><YoutubeIcon /> <span className={"ml-2"}>Youtube.com/@brainglyph</span></Button>
         <div className={"mb-6"}></div>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://www.tiktok.com/@playheli.os"}
-                target={"_blank"}><TikTokIcon /> <span className={"ml-2"}>Tiktok.com/@playheli.os</span></Button>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://www.tiktok.com/@brainglyph"}
+                target={"_blank"}><TikTokIcon /> <span className={"ml-2"}>Tiktok.com/@brainglyph</span></Button>
         <div className={"mb-6"}></div>
         <Button as={Link} className={"buttonCTA auxMono"} href={"mailto:hello@brainglyph.com"}
                 target={"_blank"}><EmailIcon /><span className={"ml-2"}>hello@brainglyph.com</span></Button>

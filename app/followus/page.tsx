@@ -76,7 +76,7 @@ export default function FollowUsPage() {
                 href={"https://www.youtube.com/channel/UCeoSz0hPS2aMPHh3hiE6czg"}
                 target={"_blank"}><YoutubeIcon /> <span className={"ml-2"}>Subscribe to our channel!</span></Button>
         <div className={"mb-6"}></div>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://www.tiktok.com/@playhelios"}
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://www.tiktok.com/@brainglyph"}
                 target={"_blank"}><TikTokIcon /> <span className={"ml-2"}>Follow us on TikTok!</span></Button>
         <br></br>
         <br></br>
