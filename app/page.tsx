@@ -191,12 +191,10 @@ export default function Home() {
             <Image src="/Helena.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Helena Sokol</h1>
             <div className={"h-16 flex flex-col justify-center mt-6 helenaMargin"}>
-              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold helenaFont")}>Producer @ Flashbulb
-                Games <br></br> Founder @ Danish Game Producers' Network <br></br> Board
-                Member @ Games Denmark</h2>
+              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold helenaFont")}>Director of members and organization <br></br> @ Games Denmark</h2>
             </div>
             <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl mt-6 helenaMargin"}>Helena is a producer
-              at Flashbulb Games with years of experience and a passion for project management, organization, and
+              with years of experience and a passion for project management, organization, and
               creative production. She has been involved in several projects, both through student organization and
               work.</p>
           </div>
