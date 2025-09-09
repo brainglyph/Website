@@ -188,28 +188,6 @@ export default function Home() {
               about the design and culture of playable media.</p>
           </div>
           <div className={"flex flex-col items-center"}>
-            <Image src="/Stella.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Stella Vaka</h1>
-            <div className={"h-24 flex flex-col justify-center"}>
-              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>CEO @ Silkroad
-                Studios <br></br> Ambassador @ Women in games</h2>
-            </div>
-            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>Stella is an expert in independent
-              game
-              business and design management, dedicated to fostering meritocratic teams who know no borders,
-              built upon ambitious dreams and passionate creatives.</p>
-          </div>
-          <div className={"flex flex-col items-center"}>
-            <Image src="/Philip.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Philip Schlüter Wittendorff</h1>
-            <div className={"h-16 flex flex-col justify-center"}>
-              <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold")}>CEO @ Trinor Entertainment</h2>
-            </div>
-            <p className={"poppins-regular col1d1d1b text-md leading-7 max-w-xl"}>Recognized as a future growth
-              adventure by the Danish Minister of Culture and supported by the Danish Innovation Fund, Trinor
-              Entertainment is an emerging Danish game development startup.</p>
-          </div>
-          <div className={"flex flex-col items-center"}>
             <Image src="/Helena.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Helena Sokol</h1>
             <div className={"h-16 flex flex-col justify-center mt-6 helenaMargin"}>
