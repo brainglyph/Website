@@ -10,7 +10,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 
-//dummy change
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: {
@@ -72,6 +72,7 @@ export default function RootLayout({
         <Navbar />
         <main className={clsx("pt-16 flex-grow bg1d1d1b")}>
           {children}
+          <Analytics/>
         </main>
       </div>
     </Providers>
