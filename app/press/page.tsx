@@ -7,7 +7,7 @@ import Typewriter from "typewriter-effect";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
-import { DiscordIcon, TikTokIcon, YoutubeIcon } from "@/components/icons";
+import { DiscordIcon, EmailIcon, TikTokIcon, YoutubeIcon } from "@/components/icons";
 
 export default function FollowUsPage() {
   const glyphArray = ["%", "#", "Ø", "↙", "&"];
@@ -65,15 +65,13 @@ export default function FollowUsPage() {
       </div>
       <div className="inline-block w-full text-center justify-center lineHeightLoose mt-14 zIndex2 relative">
         <h1 className={clsx(title(), "auxMono notBold daff01")}>Get in touch</h1>
-        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Are you interested in investing or
-          have any questions about HeliOS?</h2>
+        <h2 className={clsx("text-2xl poppins-regular daff01 mt-3 maxWidth90pc")}>Do you have any questions about brainglyph or Heli.os?</h2>
         <br className={"noMob"}></br>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
-                target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Contact us on Discord!</span></Button>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"https://ourdiscordserver.com"}
+                target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>Contact us on Discord</span></Button>
         <div className={"mb-6"}></div>
-        <Button as={Link} className={"buttonCTA auxMono"}
-                href={"mailto:admin@brainglyph.com"}
-                target={"_blank"}><span className={"ml-2"}>Shoot us an email!</span></Button>
+        <Button as={Link} className={"buttonCTA auxMono"} href={"mailto:hello@brainglyph.com"}
+                target={"_blank"}><EmailIcon /><span className={"ml-2"}>Shoot us a mail</span></Button>
         <br></br>
         <br></br>
         <br></br>
@@ -83,10 +81,6 @@ export default function FollowUsPage() {
         <br className={"noMob"}></br>
         <Button as={Link} className={"buttonCTA auxMono"} href={"/files/Brainglyph_PressKit.zip"}
                 target={"_blank"}><span className={"ml-2"}>Download press and media kit</span></Button>
-        <div className={"mb-6"}></div>
-        <Button as={Link} className={"buttonCTA auxMono"} href={"/files/BusinessPitchDeck.pdf"}
-                target={"_blank"}><span className={"ml-2"}>Download our business deck</span></Button>
-        <br></br>
         <br></br>
         <br></br>
         <Link href={"/"}><h1 className={clsx(title(), "fontMedium auxMono notBold daff01")}>← Back to homepage</h1>

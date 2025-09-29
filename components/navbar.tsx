@@ -45,8 +45,11 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500 iconFill" />
+          <Link isExternal aria-label="Discord" href={"/press"} target={"_self"}>
+            <span className={"auxMono daff01 mr-5 mt-1"}>Press</span>
+          </Link>
+          <Link isExternal aria-label="Discord" href={siteConfig.links.discord} target={"_self"}>
+            <span className={"auxMono daff01 mr-0 mt-1 under"}>Discord</span>
           </Link>
         </NavbarItem>
       </NavbarContent>
