@@ -217,7 +217,7 @@ export default function Home() {
         </div>
       </div>
       <div className="inline-block w-full text-center justify-center lineHeightLoose supportersMargin zIndex4">
-        <h1 className={clsx(title(), "auxMono notBold daff01")}>We are supported by</h1>
+        <h1 id="supporters" className={clsx(title(), "auxMono notBold daff01")}>We are supported by</h1>
         <div className={"supporters flex flex-row gap-0 maxWidth70pc flex-wrap"}>
           <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="10"/>
           <Image className={"pt-10 pb-10"} src="/Innovationsfonden.png" alt="Ast Black Image" width="500" height="0" />
