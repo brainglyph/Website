@@ -239,10 +239,10 @@ export default function Home() {
           possible!</h2>
         <br></br>
         <div className={"contactButtons maxWidth90pc"}>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"https://ourdiscordserver.com"}
                   target={"_blank"}><DiscordIcon /> Join our Discord server</Button>
-          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:admin@brainglyph.com"}
-                  target={"_blank"}>Shoot us an email</Button>
+          <Button as={Link} className={"buttonCTAReverse auxMono"} href={"mailto:hello@brainglyph.com"}
+                  target={"_blank"}>Shoot us a mail</Button>
         </div>
       </div>
       <div
