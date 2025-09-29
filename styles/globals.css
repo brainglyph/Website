@@ -184,7 +184,7 @@
 
 .advisorFlex {
     gap: 100px;
-    max-width: 90%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -203,10 +203,9 @@
 }
 
 .supporters {
-    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 240px;
 }
 
@@ -233,7 +232,7 @@
 }
 
 .maxWidth70pc {
-    max-width: 70%;
+    max-width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
