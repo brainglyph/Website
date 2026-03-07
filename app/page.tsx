@@ -137,24 +137,68 @@ export default function Home() {
           Copenhagen
           Master of Sciences in Games Technology, which we completed in June 2024. Our drive and passion brought us
           closer both professionally and as friends.</h2>
-        <div className={"flex items-start justify-center mt-16 teamFlex"}>
-          <div className={"flex flex-col items-center"}>
+        <div className={"flex items-start justify-center mt-16 teamFlex flex-wrap"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(35%-1rem)]"}>
             <Image src="/Gio.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
-              href={"https://www.linkedin.com/in/giorgio-perri/"} target={"_blank"}>Giorgio</a></h1>
-            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Art Director</h2>
-            <p className={"poppins-regular col1d1d1b text-lg leading-7 max-w-md mt-3"}>Giorgio is an art director &
-              front-end
-              specialist with a background in interaction design, who focuses on UI programming and UX design.</p>
+              href={"https://www.linkedin.com/in/giorgio-perri/"} target={"_blank"}>Giorgio Perri</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder <br></br> UI & Gameplay
+              programmer</h2>
           </div>
-          <div className={"flex flex-col items-center"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(35%-1rem)]"}>
             <Image src="/Soren.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
-              href={"https://www.linkedin.com/in/sskouv/"} target={"_blank"}>Søren</a></h1>
-            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder // Tech Director</h2>
-            <p className={"poppins-regular col1d1d1b text-lg leading-7 max-w-md mt-3"}>Søren is a developer and
-              technical director with a background in cross-media studies and a deep interest in emergent gameplay and
-              replayability. </p>
+              href={"https://www.linkedin.com/in/sskouv/"} target={"_blank"}>Søren Skouv</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder <br></br> Programmer &
+              Project manager</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+            <Image src="/Charles.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/charlesboury/"} target={"_blank"}>Charles Boury</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Art director</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+            <Image src="/Gunnar.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/gunnar-magnussen/"} target={"_blank"}>Gunnar Magnussen</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Programmer</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+            <Image src="/Sarah.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/sarah-andresen-sdu-gamedev/"} target={"_blank"}>Sarah Andresen</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Concept artist</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+            <Image src="/Joanna.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/saskia-joanna-rauhut/"} target={"_blank"}>Joanna Rauhut</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Narrative designer</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+            <Image src="/Lasse.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/lasse-boie-/"} target={"_blank"}>Lasse Boie</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Sound designer</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+            <Image src="/Frode.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/frode-s%C3%B8rensen-407886302/"} target={"_blank"}>Frode Sørensen</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Sound designer</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+            <Image src="/Richard.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/richard-rippe-b2aab3273/"} target={"_blank"}>Richard Rippe</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>3D artist</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+            <Image src="/Roman.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/roman-chacornac-3b0b47193/"} target={"_blank"}>Roman Chacornac</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>VFX Artist</h2>
           </div>
         </div>
         <div className={"mt-28"}>
@@ -166,7 +210,7 @@ export default function Home() {
             industry. Our trustworthy, multidisciplinary, and diverse board of advisors is made up of:</h2>
         </div>
         <div className={"flex items-start justify-center mt-20 mb-40 advisorFlex flex-wrap"}>
-          <div className={"flex flex-col items-center"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(35%-1rem)]"}>
             <Image src="/soeren.jpg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Søren Lundgaard</h1>
             <div className={"h-16 flex flex-col justify-center"}>
@@ -176,7 +220,7 @@ export default function Home() {
               development and leadership, Søren excels in innovation, player engagement, and fostering creative,
               community-focused projects, such as Deep Rock Galactic.</p>
           </div>
-          <div className={"flex flex-col items-center"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(35%-1rem)]"}>
             <Image src="/Miguel.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Miguel Sicart</h1>
             <div className={"h-24 flex flex-col justify-center"}>
@@ -187,7 +231,7 @@ export default function Home() {
               at the IT University of Copenhagen and head of the Center for Digital Play. He writes and teaches
               about the design and culture of playable media.</p>
           </div>
-          <div className={"flex flex-col items-center"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(35%-1rem)]"}>
             <Image src="/Helena.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Helena Sokol</h1>
             <div className={"h-16 flex flex-col justify-center mt-6 helenaMargin"}>
@@ -198,7 +242,7 @@ export default function Home() {
               creative production. She has been involved in several projects, both through student organization and
               work.</p>
           </div>
-          <div className={"flex flex-col items-center"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(35%-1rem)]"}>
             <Image src="/brian.jpeg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6")}>Brian Martin Nielsen</h1>
             <div className={"h-16 flex flex-col justify-center"}>
@@ -219,9 +263,9 @@ export default function Home() {
       <div className="inline-block w-full text-center justify-center lineHeightLoose supportersMargin zIndex4">
         <h1 id="supporters" className={clsx(title(), "auxMono notBold daff01")}>We are supported by</h1>
         <div className={"supporters flex flex-row gap-0 maxWidth70pc flex-wrap"}>
-          <Image src="/ITUNextGen.png" alt="Ast Black Image" width="500" height="10"/>
-          <Image className={"pt-10 pb-10"} src="/Innovationsfonden.png" alt="Ast Black Image" width="500" height="0" />
-          <Image className={"pt-20 pb-0"} src="/eu.png" alt="Ast Black Image" width="500" height="0" />
+          <Image src="/ITUNextGen.png" alt="Ast Black Image" width="400" height="0"/>
+          <Image className={"pt-10 pb-10"} src="/Innovationsfonden.png" alt="Ast Black Image" width="400" height="0" />
+          <Image className={"pt-20 pb-0"} src="/eu.png" alt="Ast Black Image" width="400" height="0" />
         </div>
         <div className="custom-shape-divider-bottom-1721854866-g littleNegativeBottom">
           <svg className="mt-10" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90"
