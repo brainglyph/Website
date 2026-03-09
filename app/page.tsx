@@ -194,12 +194,12 @@ export default function Home() {
               href={"https://www.linkedin.com/in/richard-rippe-b2aab3273/"} target={"_blank"}>Richard Rippe</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>3D artist</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
-            <Image src="/Roman.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
-              href={"https://www.linkedin.com/in/roman-chacornac-3b0b47193/"} target={"_blank"}>Roman Chacornac</a></h1>
-            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>VFX Artist</h2>
-          </div>
+          {/*<div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>*/}
+          {/*  <Image src="/Roman.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />*/}
+          {/*  <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a*/}
+          {/*    href={"https://www.linkedin.com/in/roman-chacornac-3b0b47193/"} target={"_blank"}>Roman Chacornac</a></h1>*/}
+          {/*  <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>VFX Artist</h2>*/}
+          {/*</div>*/}
         </div>
         <div className={"mt-28"}>
           <div className={"maxWidth90pc"}><h1 className={clsx(title(), "auxMono notBold col1d1d1b")}>We're not alone in
