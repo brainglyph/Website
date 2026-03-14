@@ -152,54 +152,60 @@ export default function Home() {
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Co-Founder <br></br> Programmer &
               Project manager</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Charles.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/charlesboury/"} target={"_blank"}>Charles Boury</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Art director</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Gunnar.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/gunnar-magnussen/"} target={"_blank"}>Gunnar Magnussen</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Programmer</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Sarah.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/sarah-andresen-sdu-gamedev/"} target={"_blank"}>Sarah Andresen</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Concept artist</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Joanna.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/saskia-joanna-rauhut/"} target={"_blank"}>Joanna Rauhut</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Narrative designer</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(15%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Lasse.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/lasse-boie-/"} target={"_blank"}>Lasse Boie</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Sound designer</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Frode.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/frode-s%C3%B8rensen-407886302/"} target={"_blank"}>Frode Sørensen</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Sound designer</h2>
           </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Richard.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/richard-rippe-b2aab3273/"} target={"_blank"}>Richard Rippe</a></h1>
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>3D artist</h2>
           </div>
-          {/*<div className={"flex flex-col items-center flex-grow basis-[calc(10%-1rem)]"}>*/}
-          {/*  <Image src="/Roman.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />*/}
-          {/*  <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a*/}
-          {/*    href={"https://www.linkedin.com/in/roman-chacornac-3b0b47193/"} target={"_blank"}>Roman Chacornac</a></h1>*/}
-          {/*  <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>VFX Artist</h2>*/}
-          {/*</div>*/}
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
+            <Image src="/Roman.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/roman-chacornac-3b0b47193/"} target={"_blank"}>Roman Chacornac</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>VFX Artist</h2>
+          </div>
+          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
+            <Image src="/mito.jpg" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
+            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
+              href={"https://www.linkedin.com/in/mathias-mito-gregersen/"} target={"_blank"}>Mathias Gregersen</a></h1>
+            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>3D Animator & rigger</h2>
+          </div>
         </div>
         <div className={"mt-28"}>
           <div className={"maxWidth90pc"}><h1 className={clsx(title(), "auxMono notBold col1d1d1b")}>We're not alone in
