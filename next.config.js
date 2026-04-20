@@ -11,6 +11,11 @@ const nextConfig = {
         source: '/investordeck',
         destination: 'https://www.figma.com/deck/GxAn7wldqCeg0hgMIEjP9E/Heli.os---Investor-Standalone-Deck',
         permanent: true,
+      },
+      {
+        source: '/fullpitchdeck',
+        destination: 'https://www.figma.com/deck/PrMjdmch5wuynV0xcalvgP/Heli.os---Pitch-Deck-with-supporting-material',
+        permanent: true,
       }
     ];
   },
