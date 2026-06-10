@@ -165,12 +165,6 @@ export default function Home() {
             <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Programmer</h2>
           </div>
           <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
-            <Image src="/Sarah.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
-            <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
-              href={"https://www.linkedin.com/in/sarah-andresen-sdu-gamedev/"} target={"_blank"}>Sarah Andresen</a></h1>
-            <h2 className={clsx("auxMono col1d1d1b text-lg font-semibold mt-3")}>Concept artist</h2>
-          </div>
-          <div className={"flex flex-col items-center flex-grow basis-[calc(25%-1rem)]"}>
             <Image src="/Joanna.png" alt="Ast Black Image" width="200" height="0" className={"imageShadow"} />
             <h1 className={clsx("auxMono col1d1d1b text-xl mt-6 underline")}><a
               href={"https://www.linkedin.com/in/saskia-joanna-rauhut/"} target={"_blank"}>Joanna Rauhut</a></h1>
