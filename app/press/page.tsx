@@ -47,7 +47,7 @@ export default function FollowUsPage() {
   return (
     <section className="flex flex-col items-center justify-center gap-0 pb-0">
       <div
-        className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose negativeMarginXL bigPaddingBottom zIndex4 firstSect">
+        className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose bigPaddingBottom zIndex4 firstSect">
         <span className={clsx("glyph col1d1d1b auxMono", showImage && "invisible")}>{currentGlyph}{showImage &&
           <Image src="/astBlack.svg" alt="Ast Black Image" width="135" height="0" className={"astGlyph"} />
         }</span>

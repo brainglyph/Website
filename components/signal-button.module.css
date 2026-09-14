@@ -1,0 +1,128 @@
+.button {
+  --button-background: var(--ink-black);
+  --button-foreground: var(--signal-yellow);
+  --button-hover-background: var(--signal-yellow);
+  --button-hover-foreground: var(--ink-black);
+
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  width: min(20rem, 90vw);
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow: hidden;
+  border: 1px solid
+    color-mix(in srgb, var(--button-foreground) 55%, transparent);
+  border-radius: 0;
+  padding: 0.9rem 1.15rem 0.85rem 1.35rem;
+  background: var(--button-background);
+  color: var(--button-foreground);
+  font-family: "Aux", monospace;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    border-color 220ms cubic-bezier(0.23, 1, 0.32, 1),
+    color 220ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button::before {
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  background: var(--button-hover-background);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 320ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button:hover {
+  border-color: var(--button-hover-foreground);
+  color: var(--button-hover-foreground);
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--button-foreground);
+  outline-offset: 4px;
+}
+
+.signal {
+  --button-background: var(--signal-yellow);
+  --button-foreground: var(--ink-black);
+  --button-hover-background: var(--ink-black);
+  --button-hover-foreground: var(--signal-yellow);
+}
+
+.label,
+.iconWindow {
+  position: relative;
+  z-index: 1;
+}
+
+.iconWindow {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: 0 0 1.2rem;
+  overflow: hidden;
+}
+
+.iconPrimary,
+.iconEcho {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.iconEcho {
+  transform: translate(-115%, 115%);
+}
+
+.iconWindow svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.35;
+}
+
+.iconWindow svg:not([fill="none"]) {
+  fill: currentColor;
+}
+
+.button:hover .iconPrimary {
+  transform: translate(115%, -115%);
+}
+
+.button:hover .iconEcho {
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .button::before,
+  .iconPrimary,
+  .iconEcho {
+    transition: none;
+  }
+}

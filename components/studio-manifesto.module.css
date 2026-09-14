@@ -1,0 +1,107 @@
+.section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 64svh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: clamp(3rem, 5vw, 5rem) 1.5rem clamp(6rem, 9vw, 8rem);
+  background: var(--ink-black);
+  color: #daff01;
+  text-align: center;
+}
+
+.brainLockup {
+  position: relative;
+  width: clamp(6.25rem, 9vw, 8.25rem);
+  aspect-ratio: 76.18 / 61.77;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
+.brain {
+  position: absolute;
+  top: 12.74%;
+  left: 0;
+  width: 89.67%;
+  aspect-ratio: 68.31 / 53.9;
+  background: #daff01;
+  mask: url("/logoBlackEmpty.svg") center / contain no-repeat;
+  -webkit-mask: url("/logoBlackEmpty.svg") center / contain no-repeat;
+}
+
+.glyphStage {
+  position: absolute;
+  top: 15.77%;
+  left: 87.22%;
+  display: grid;
+  width: 30%;
+  aspect-ratio: 1;
+  place-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.glyph,
+.asterisk {
+  grid-area: 1 / 1;
+}
+
+.glyph {
+  font-family: "Aux", monospace;
+  font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.asterisk {
+  width: 70%;
+  aspect-ratio: 1;
+  background: #daff01;
+  mask: url("/astBlack.svg") center / contain no-repeat;
+  -webkit-mask: url("/astBlack.svg") center / contain no-repeat;
+}
+
+.heading {
+  display: flex;
+  max-width: min(72rem, 94vw);
+  flex-direction: column;
+  margin: 0;
+  font-family: "Aux", monospace;
+  font-size: clamp(1.65rem, 2.8vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.28;
+  text-wrap: balance;
+}
+
+.scrambleLine {
+  display: block;
+  min-height: 1.3em;
+  color: #daff01;
+  font-family: "Aux", monospace;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .section {
+    min-height: 58svh;
+    padding: 3rem 1rem 5rem;
+  }
+
+  .heading {
+    font-size: clamp(1.4rem, 5.5vw, 1.65rem);
+    line-height: 1.35;
+  }
+
+  .brainLockup {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glyph,
+  .asterisk {
+    transition: none;
+  }
+}

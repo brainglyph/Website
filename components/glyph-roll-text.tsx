@@ -1,0 +1,175 @@
+"use client";
+
+import { useMemo } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+
+import styles from "./glyph-roll-text.module.css";
+
+import { BRAINGLYPH_GLYPHS } from "@/lib/glyphs";
+
+export type GlyphTextSegment = {
+  emphasis?: boolean;
+  text: string;
+};
+
+type GlyphRollTextProps = {
+  active?: boolean;
+  className?: string;
+  segments?: readonly GlyphTextSegment[];
+  text?: string;
+};
+
+const ROLL_GLYPH_COUNT = 7;
+const ROLL_DURATION_MS = 680;
+const SCATTER_PER_CHARACTER_MS = 4;
+const MAX_PROGRESSIVE_SCATTER_MS = 176;
+const RANDOM_SCATTER_MS = 20;
+const MAX_SCATTER_MS = MAX_PROGRESSIVE_SCATTER_MS + RANDOM_SCATTER_MS;
+
+export const GLYPH_ROLL_DURATION_MS = ROLL_DURATION_MS + MAX_SCATTER_MS;
+
+function hashText(value: string) {
+  let hash = 2166136261;
+
+  for (const character of value) {
+    hash ^= character.codePointAt(0) ?? 0;
+    hash = Math.imul(hash, 16777619);
+  }
+
+  return hash >>> 0;
+}
+
+function buildGlyphReel(seed: number) {
+  const glyphs: string[] = [];
+  let cursor = seed;
+
+  while (glyphs.length < ROLL_GLYPH_COUNT) {
+    cursor =
+      (Math.imul(cursor ^ (cursor >>> 15), 2246822519) + 3266489917) >>> 0;
+    const glyph = BRAINGLYPH_GLYPHS[cursor % BRAINGLYPH_GLYPHS.length];
+
+    if (glyph !== glyphs[glyphs.length - 1]) glyphs.push(glyph);
+  }
+
+  return glyphs;
+}
+
+export function GlyphRollText({
+  active = true,
+  className,
+  segments,
+  text = "",
+}: GlyphRollTextProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const resolvedSegments = useMemo(
+    () => segments ?? [{ text }],
+    [segments, text],
+  );
+  const contentKey = resolvedSegments
+    .map(
+      ({ emphasis, text: segmentText }) =>
+        `${emphasis ? "1" : "0"}:${segmentText}`,
+    )
+    .join("|");
+  const accessibleText = resolvedSegments
+    .map(({ text: segmentText }) => segmentText)
+    .join("");
+  const baseSeed = hashText(contentKey);
+  let characterIndex = 0;
+
+  return (
+    <span aria-label={accessibleText} className={className}>
+      <span key={contentKey} aria-hidden="true" className={styles.line}>
+        {resolvedSegments.map((segment, segmentIndex) =>
+          segment.text.split(/(\s+)/).map((word, wordIndex) => {
+            if (/^\s+$/.test(word)) {
+              characterIndex += word.length;
+
+              return (
+                <span
+                  key={`${segmentIndex}-${wordIndex}-space`}
+                  className={styles.space}
+                >
+                  {word}
+                </span>
+              );
+            }
+
+            return (
+              <span
+                key={`${segmentIndex}-${wordIndex}`}
+                className={styles.word}
+              >
+                {Array.from(word).map((character) => {
+                  const index = characterIndex++;
+                  const reelGlyphs = buildGlyphReel(
+                    baseSeed + index * 2654435761,
+                  );
+                  const progressiveDelay = Math.min(
+                    index * SCATTER_PER_CHARACTER_MS,
+                    MAX_PROGRESSIVE_SCATTER_MS,
+                  );
+                  const randomDelay =
+                    (baseSeed + index * 11) % RANDOM_SCATTER_MS;
+                  const delay = (progressiveDelay + randomDelay) / 1000;
+                  const characterClass = `${styles.reelCharacter} ${
+                    segment.emphasis ? styles.emphasis : ""
+                  }`;
+
+                  return (
+                    <span key={index} className={styles.cell}>
+                      <span
+                        className={`${styles.measure} ${
+                          segment.emphasis ? styles.emphasis : ""
+                        }`}
+                      >
+                        {character}
+                      </span>
+                      <span className={styles.viewport}>
+                        <span className={styles.reelCenter}>
+                          <motion.span
+                            animate={
+                              active || shouldReduceMotion
+                                ? {
+                                    opacity: 1,
+                                    y: `-${reelGlyphs.length}lh`,
+                                  }
+                                : { opacity: 0, y: "0.22lh" }
+                            }
+                            className={styles.reel}
+                            initial={
+                              active && !shouldReduceMotion
+                                ? { opacity: 0, y: "0.22lh" }
+                                : false
+                            }
+                            transition={{
+                              delay: shouldReduceMotion ? 0 : delay,
+                              duration: shouldReduceMotion
+                                ? 0
+                                : ROLL_DURATION_MS / 1000,
+                              ease: [0.2, 0.82, 0.25, 1],
+                            }}
+                          >
+                            {reelGlyphs.map((glyph, glyphIndex) => (
+                              <span
+                                key={`${glyphIndex}-${glyph}`}
+                                className={characterClass}
+                              >
+                                {glyph}
+                              </span>
+                            ))}
+                            <span className={characterClass}>{character}</span>
+                          </motion.span>
+                        </span>
+                      </span>
+                    </span>
+                  );
+                })}
+              </span>
+            );
+          }),
+        )}
+      </span>
+    </span>
+  );
+}

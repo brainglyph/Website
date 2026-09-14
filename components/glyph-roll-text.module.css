@@ -1,0 +1,67 @@
+.line {
+  display: inline;
+}
+
+.word {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.space {
+  white-space: pre;
+}
+
+.cell {
+  position: relative;
+  display: inline-block;
+  color: var(--glyph-text-color, inherit);
+  vertical-align: baseline;
+}
+
+.measure {
+  visibility: hidden;
+  font: inherit;
+  line-height: inherit;
+}
+
+.viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.reelCenter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.reelCharacter {
+  display: block;
+  height: 1lh;
+  flex: 0 0 1lh;
+  color: var(--glyph-text-color, inherit);
+  font: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.emphasis {
+  color: var(--glyph-emphasis-color, #ffd10a);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel {
+    transition: none;
+  }
+}

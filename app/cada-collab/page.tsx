@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-0 pb-0">
       <div
-        className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose negativeMarginXL bigPaddingBottom zIndex4 firstSect">
+        className="bgDaff01 inline-block w-full text-center justify-center lineHeightLoose bigPaddingBottom zIndex4 firstSect">
         <span className={clsx("glyph col1d1d1b auxMono", showImage && "invisible")}>{currentGlyph}{showImage &&
           <Image src="/astBlack.svg" alt="Ast Black Image" width="135" height="0" className={"astGlyph"} />
         }</span>
@@ -322,7 +322,7 @@ export default function Home() {
                 target={"_blank"}><EmailIcon /><span className={"ml-2"}>hello@brainglyph.com</span></Button>
         <div className={"mb-6"}></div>
         <Button as={Link} className={"buttonCTA auxMono"}
-                href={"https://discord.gg/compact-claustrophobia-650043435243405352"}
+                href={"https://ourdiscordserver.com"}
                 target={"_blank"}><DiscordIcon /> <span className={"ml-2"}>OurDiscordServer.com</span></Button>
         <h2 className={clsx("text-l poppins-regular daff01 mt-3 maxWidth90pc")}>*Yes, we do own this domain :D</h2>
         <br></br>

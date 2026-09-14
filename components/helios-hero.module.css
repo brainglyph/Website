@@ -1,0 +1,188 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  width: 100%;
+  min-height: max(calc(100svh - 4rem - 4px), 46rem);
+  align-self: stretch;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  row-gap: clamp(2.5rem, 5vh, 4rem);
+  overflow: hidden;
+  padding: clamp(4rem, 7vh, 5.5rem) 1.5rem
+    calc(clamp(3rem, 7vw, 6rem) + 1.75rem);
+  background: #151713;
+  color: #ffd10a;
+}
+
+.backdropWrap {
+  position: absolute;
+  inset: -5vw;
+  z-index: -3;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.backdrop {
+  object-fit: cover;
+  object-position: center;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: #0f120e;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  width: min(72rem, 100%);
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2.5rem, 5vh, 3.5rem);
+  text-align: center;
+}
+
+.logoHitbox {
+  position: relative;
+  width: min(38.75rem, 61.5vw);
+  margin: 0;
+}
+
+.logoReveal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  will-change: transform, opacity;
+}
+
+.logoLink {
+  display: block;
+  color: inherit;
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid var(--signal-yellow);
+  outline-offset: 0.5rem;
+}
+
+.logoMotion {
+  position: relative;
+  width: 100%;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.logoMotion::after {
+  position: absolute;
+  inset: 10% 5%;
+  z-index: -1;
+  border-radius: 50%;
+  background: rgba(255, 209, 10, 0.34);
+  content: "";
+  filter: blur(3rem);
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 220ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logoMotion[data-hovered]::after {
+  opacity: 0.42;
+  transform: scale(1);
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0.75rem 2.5rem rgba(0, 0, 0, 0.55));
+}
+
+.description {
+  --glyph-emphasis-color: #ffd10a;
+  --glyph-text-color: #fffff0;
+
+  max-width: 48rem;
+  margin: clamp(-2rem, -2.5vw, -0.75rem) 0 0;
+  color: #fffff0;
+  font-family: var(--font-jura), sans-serif;
+  font-size: clamp(1.25rem, 1.95vw, 1.475rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  text-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.9);
+  text-wrap: balance;
+}
+
+.description strong {
+  color: #ffd10a;
+  font-weight: 700;
+}
+
+.wishlistReveal {
+  align-self: end;
+  will-change: transform, opacity;
+}
+
+.wishlist {
+  margin: 0;
+}
+
+.steamIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  -webkit-mask: url("/steam.png") center / contain no-repeat;
+  mask: url("/steam.png") center / contain no-repeat;
+}
+
+.edge {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: clamp(3rem, 7vw, 6rem);
+  background: var(--ink-black);
+  clip-path: polygon(
+    0 72%,
+    18% 28%,
+    43% 72%,
+    69% 0,
+    86% 72%,
+    100% 36%,
+    100% 100%,
+    0 100%
+  );
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: max(calc(100svh - 4rem - 4px), 42rem);
+    row-gap: 2rem;
+    padding: 3rem 1.25rem calc(3rem + 1.5rem);
+  }
+
+  .backdropWrap {
+    inset: -3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoMotion::after {
+    transition: none;
+  }
+}

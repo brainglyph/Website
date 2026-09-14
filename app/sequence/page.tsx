@@ -55,7 +55,7 @@ export default function FollowUsPage() {
   return (
     <section className="">
       <div
-        className="fullHeight negativeMarginXL bgDaff01 inline-block w-full text-center justify-center lineHeightLoose">
+        className="fullHeight bgDaff01 inline-block w-full text-center justify-center lineHeightLoose">
         <div className="mt-64 enlarge">
           <span className="hidden">Knowledge comes to those who seek it.</span>
           <span className={clsx("glyph col1d1d1b auxMono", showImage && "invisible")}>{currentGlyph}{showImage &&
