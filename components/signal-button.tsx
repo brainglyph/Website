@@ -1,7 +1,11 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+"use client";
+
+import { ComponentPropsWithoutRef, ReactNode, useState } from "react";
 import clsx from "clsx";
 
 import styles from "./signal-button.module.css";
+
+import { GlyphRollText } from "@/components/glyph-roll-text";
 
 type SignalButtonProps = ComponentPropsWithoutRef<"a"> & {
   icon?: ReactNode;
@@ -22,24 +26,62 @@ function ArrowUpRight() {
 }
 
 export function SignalButton({
+  "aria-label": ariaLabel,
   children,
   className,
   icon,
+  onBlur,
+  onFocus,
+  onPointerEnter,
+  onPointerLeave,
   rel,
   target,
   variant = "ink",
   ...props
 }: SignalButtonProps) {
+  const [isLabelAnimated, setIsLabelAnimated] = useState(false);
+  const [labelAnimationKey, setLabelAnimationKey] = useState(0);
   const safeRel = target === "_blank" ? (rel ?? "noreferrer") : rel;
+  const label = typeof children === "string" ? children : null;
+
+  function startLabelAnimation() {
+    if (!label) return;
+
+    setLabelAnimationKey((current) => current + 1);
+    setIsLabelAnimated(true);
+  }
 
   return (
     <a
+      aria-label={ariaLabel ?? label ?? undefined}
       className={clsx(styles.button, styles[variant], className)}
       rel={safeRel}
       target={target}
       {...props}
+      onBlur={(event) => {
+        setIsLabelAnimated(false);
+        onBlur?.(event);
+      }}
+      onFocus={(event) => {
+        startLabelAnimation();
+        onFocus?.(event);
+      }}
+      onPointerEnter={(event) => {
+        startLabelAnimation();
+        onPointerEnter?.(event);
+      }}
+      onPointerLeave={(event) => {
+        setIsLabelAnimated(false);
+        onPointerLeave?.(event);
+      }}
     >
-      <span className={styles.label}>{children}</span>
+      <span aria-hidden={label ? "true" : undefined} className={styles.label}>
+        {label && isLabelAnimated ? (
+          <GlyphRollText key={labelAnimationKey} text={label} />
+        ) : (
+          children
+        )}
+      </span>
       <span aria-hidden="true" className={styles.iconWindow}>
         <span className={styles.iconPrimary}>{icon ?? <ArrowUpRight />}</span>
         <span className={styles.iconEcho}>{icon ?? <ArrowUpRight />}</span>

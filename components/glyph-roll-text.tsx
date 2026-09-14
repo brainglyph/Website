@@ -19,14 +19,19 @@ type GlyphRollTextProps = {
   text?: string;
 };
 
-const ROLL_GLYPH_COUNT = 7;
-const ROLL_DURATION_MS = 680;
-const SCATTER_PER_CHARACTER_MS = 4;
-const MAX_PROGRESSIVE_SCATTER_MS = 176;
-const RANDOM_SCATTER_MS = 20;
+const STANDARD_ROLL_DURATION_MS = 980;
+const STANDARD_DURATION_VARIANCE_MS = 120;
+const EARLY_ROLL_DURATION_MS = 740;
+const EARLY_DURATION_VARIANCE_MS = 120;
+const EARLY_RESOLVE_CHANCE = 28;
+const SCATTER_PER_CHARACTER_MS = 7;
+const MAX_PROGRESSIVE_SCATTER_MS = 320;
+const RANDOM_SCATTER_MS = 32;
 const MAX_SCATTER_MS = MAX_PROGRESSIVE_SCATTER_MS + RANDOM_SCATTER_MS;
+const MAX_ROLL_DURATION_MS =
+  STANDARD_ROLL_DURATION_MS + STANDARD_DURATION_VARIANCE_MS;
 
-export const GLYPH_ROLL_DURATION_MS = ROLL_DURATION_MS + MAX_SCATTER_MS;
+export const GLYPH_ROLL_DURATION_MS = MAX_ROLL_DURATION_MS + MAX_SCATTER_MS;
 
 function hashText(value: string) {
   let hash = 2166136261;
@@ -39,11 +44,11 @@ function hashText(value: string) {
   return hash >>> 0;
 }
 
-function buildGlyphReel(seed: number) {
+function buildGlyphReel(seed: number, glyphCount: number) {
   const glyphs: string[] = [];
   let cursor = seed;
 
-  while (glyphs.length < ROLL_GLYPH_COUNT) {
+  while (glyphs.length < glyphCount) {
     cursor =
       (Math.imul(cursor ^ (cursor >>> 15), 2246822519) + 3266489917) >>> 0;
     const glyph = BRAINGLYPH_GLYPHS[cursor % BRAINGLYPH_GLYPHS.length];
@@ -102,16 +107,25 @@ export function GlyphRollText({
               >
                 {Array.from(word).map((character) => {
                   const index = characterIndex++;
-                  const reelGlyphs = buildGlyphReel(
-                    baseSeed + index * 2654435761,
-                  );
+                  const characterSeed = (baseSeed + index * 2654435761) >>> 0;
+                  const resolvesEarly =
+                    (characterSeed >>> 7) % 100 < EARLY_RESOLVE_CHANCE;
+                  const glyphCount = resolvesEarly
+                    ? 5 + (characterSeed % 2)
+                    : 8 + (characterSeed % 2);
+                  const reelGlyphs = buildGlyphReel(characterSeed, glyphCount);
                   const progressiveDelay = Math.min(
                     index * SCATTER_PER_CHARACTER_MS,
                     MAX_PROGRESSIVE_SCATTER_MS,
                   );
                   const randomDelay =
-                    (baseSeed + index * 11) % RANDOM_SCATTER_MS;
+                    (characterSeed >>> 13) % RANDOM_SCATTER_MS;
                   const delay = (progressiveDelay + randomDelay) / 1000;
+                  const duration = resolvesEarly
+                    ? EARLY_ROLL_DURATION_MS +
+                      ((characterSeed >>> 17) % EARLY_DURATION_VARIANCE_MS)
+                    : STANDARD_ROLL_DURATION_MS +
+                      ((characterSeed >>> 17) % STANDARD_DURATION_VARIANCE_MS);
                   const characterClass = `${styles.reelCharacter} ${
                     segment.emphasis ? styles.emphasis : ""
                   }`;
@@ -146,7 +160,7 @@ export function GlyphRollText({
                               delay: shouldReduceMotion ? 0 : delay,
                               duration: shouldReduceMotion
                                 ? 0
-                                : ROLL_DURATION_MS / 1000,
+                                : duration / 1000,
                               ease: [0.2, 0.82, 0.25, 1],
                             }}
                           >

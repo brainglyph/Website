@@ -42,6 +42,11 @@ body::-webkit-scrollbar {
   background: var(--ink-black);
 }
 
+.site-navbar {
+  overflow: clip;
+  border-radius: 0 0 var(--site-frame-radius) var(--site-frame-radius);
+}
+
 .viewport-frame {
   position: fixed;
   inset: 0;

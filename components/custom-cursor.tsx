@@ -22,6 +22,9 @@ export function CustomCursor() {
   const shouldReduceMotion = useReducedMotion();
   const cursorRef = useRef<HTMLDivElement>(null);
   const hasAppeared = useRef(false);
+  const idleTimeout = useRef<number>();
+  const lastPointer = useRef<{ time: number; x: number; y: number }>();
+  const rotation = useRef(0);
   const [isInteractive, setIsInteractive] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [glyph, setGlyph] = useState<string>(BRAINGLYPH_GLYPHS[0]);
@@ -36,13 +39,57 @@ export function CustomCursor() {
     function handlePointerMove(event: PointerEvent) {
       if (event.pointerType !== "mouse") return;
 
+      const cursor = cursorRef.current;
+
       if (!hasAppeared.current) {
         hasAppeared.current = true;
         setIsVisible(true);
       }
 
-      cursorRef.current?.style.setProperty("--cursor-x", `${event.clientX}px`);
-      cursorRef.current?.style.setProperty("--cursor-y", `${event.clientY}px`);
+      cursor?.style.setProperty("--cursor-x", `${event.clientX}px`);
+      cursor?.style.setProperty("--cursor-y", `${event.clientY}px`);
+
+      const previousPointer = lastPointer.current;
+      const now = performance.now();
+
+      if (cursor && previousPointer && !shouldReduceMotion) {
+        const distance = Math.hypot(
+          event.clientX - previousPointer.x,
+          event.clientY - previousPointer.y,
+        );
+        const elapsed = Math.max(now - previousPointer.time, 8);
+        const velocity = distance / elapsed;
+        const degreesPerPixel = 0.35 + Math.min(velocity, 2.5) * 0.16;
+
+        if (distance > 0.2) {
+          cursor.removeAttribute("data-idle");
+          rotation.current += distance * degreesPerPixel;
+          cursor.style.setProperty(
+            "--cursor-rotation",
+            `${rotation.current}deg`,
+          );
+        }
+      }
+
+      lastPointer.current = {
+        time: now,
+        x: event.clientX,
+        y: event.clientY,
+      };
+
+      window.clearTimeout(idleTimeout.current);
+      idleTimeout.current = window.setTimeout(() => {
+        if (!cursor || shouldReduceMotion) return;
+
+        const nearestAngle = ((rotation.current + 540) % 360) - 180;
+
+        rotation.current = nearestAngle;
+        cursor.style.setProperty("--cursor-rotation", `${nearestAngle}deg`);
+        void cursor.offsetWidth;
+        cursor.setAttribute("data-idle", "");
+        rotation.current = 0;
+        cursor.style.setProperty("--cursor-rotation", "0deg");
+      }, 1000);
 
       const target = event.target;
 
@@ -53,7 +100,9 @@ export function CustomCursor() {
     }
 
     function hideCursor() {
+      window.clearTimeout(idleTimeout.current);
       hasAppeared.current = false;
+      lastPointer.current = undefined;
       setIsVisible(false);
       setIsInteractive(false);
     }
@@ -65,10 +114,11 @@ export function CustomCursor() {
 
     return () => {
       document.documentElement.classList.remove("has-custom-cursor");
+      window.clearTimeout(idleTimeout.current);
       window.removeEventListener("pointermove", handlePointerMove);
       document.documentElement.removeEventListener("mouseleave", hideCursor);
     };
-  }, []);
+  }, [shouldReduceMotion]);
 
   useEffect(() => {
     if (!isInteractive || shouldReduceMotion) return;
@@ -92,8 +142,12 @@ export function CustomCursor() {
         className={styles.cursor}
         data-interactive={isInteractive || undefined}
       >
-        <span className={styles.asterisk} />
-        <span className={styles.glyph}>{glyph}</span>
+        <span className={styles.face}>
+          <span className={styles.rotor}>
+            <span className={styles.asterisk} />
+          </span>
+          <span className={styles.glyph}>{glyph}</span>
+        </span>
       </div>
     </div>
   );

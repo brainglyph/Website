@@ -17,7 +17,7 @@ import {
 import { getRandomGlyph } from "@/lib/glyphs";
 
 const ASTERISK = "asterisk";
-const GLYPH_INTERVAL_MS = 240;
+const GLYPH_INTERVAL_MS = 340;
 const ASTERISK_CHANCE = 0.18;
 const PHRASE_HOLD_MS = 2400;
 const PHRASES = [
