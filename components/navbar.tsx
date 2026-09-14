@@ -5,10 +5,15 @@ import {
   NavbarItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
+import clsx from "clsx";
 import Image from "next/image";
 import NextLink from "next/link";
 
+import navStyles from "./press-popover.module.css";
+
 import { DiscordIcon } from "@/components/icons";
+import { HoverGlyphLabel } from "@/components/hover-glyph-label";
+import { PressPopover } from "@/components/press-popover";
 import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
@@ -32,21 +37,25 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Discord" href="/press" target="_self">
-            <span className="auxMono daff01 mr-5 mt-1">Press</span>
-          </Link>
+          <span className="auxMono daff01 mr-5 mt-1">
+            <PressPopover />
+          </span>
           <Link
             isExternal
             aria-label="Discord"
+            className={clsx(navStyles.navAction, "auxMono daff01 mr-0 mt-1")}
             href={siteConfig.links.discord}
             target="_self"
           >
-            <span className="auxMono daff01 mr-0 mt-1 under">Discord</span>
+            <HoverGlyphLabel text="Discord" />
           </Link>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className="sm:hidden basis-1 pl-4 gap-4" justify="end">
+        <span className="auxMono daff01 text-sm">
+          <PressPopover />
+        </span>
         <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
           <DiscordIcon className="text-default-500 iconFill" />
         </Link>

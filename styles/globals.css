@@ -11,14 +11,16 @@
 
 html {
   background: var(--ink-black);
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   scrollbar-width: none;
 }
 
 body {
   overflow-x: hidden;
   background: var(--ink-black) !important;
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   -ms-overflow-style: none;
 }
 
@@ -100,6 +102,36 @@ body::-webkit-scrollbar {
   fill: var(--ink-black) !important;
   z-index: 3;
   margin-top: -140px;
+}
+
+.custom-shape-divider-top-1721854402 svg,
+.custom-shape-divider-bottom-1721854866 svg,
+.custom-shape-divider-bottom-1721854866-g svg,
+.custom-shape-divider-bottom-1721854866-gr svg {
+  width: 102%;
+  margin-left: -1%;
+  animation: zigzag-drift 9s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes zigzag-drift {
+  from {
+    transform: translate3d(-0.35%, 0, 0) scaleX(1.012);
+  }
+
+  to {
+    transform: translate3d(0.35%, 0, 0) scaleX(1.026);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-shape-divider-top-1721854402 svg,
+  .custom-shape-divider-bottom-1721854866 svg,
+  .custom-shape-divider-bottom-1721854866-g svg,
+  .custom-shape-divider-bottom-1721854866-gr svg {
+    animation: none;
+  }
 }
 
 .custom-shape-divider-bottom-1721854866-g {

@@ -22,11 +22,13 @@ const MAGNETIC_PADDING = 75;
 const MAGNETIC_STRENGTH = 10;
 const MAX_OFFSET_X = 36;
 const MAX_OFFSET_Y = 28;
+const INTRO_CONTENT_DELAY_MS = 260;
 const STEAM_WISHLIST_URL =
   "https://store.steampowered.com/search/?term=Heli.os";
 
 export function HeliosHero() {
   const logoHitbox = useRef<HTMLHeadingElement>(null);
+  const revealTimeout = useRef<number>();
   const prefersReducedMotion = useReducedMotion();
   const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [hasEntered, setHasEntered] = useState(hasSiteIntroPlayed);
@@ -40,13 +42,21 @@ export function HeliosHero() {
   });
 
   useEffect(() => {
-    const revealHero = () => setHasEntered(true);
+    const revealHero = () => {
+      window.clearTimeout(revealTimeout.current);
+      revealTimeout.current = window.setTimeout(
+        () => setHasEntered(true),
+        prefersReducedMotion ? 0 : INTRO_CONTENT_DELAY_MS,
+      );
+    };
 
     window.addEventListener(SITE_INTRO_REVEAL_EVENT, revealHero);
 
-    return () =>
+    return () => {
+      window.clearTimeout(revealTimeout.current);
       window.removeEventListener(SITE_INTRO_REVEAL_EVENT, revealHero);
-  }, []);
+    };
+  }, [prefersReducedMotion]);
 
   function resetLogo() {
     setIsLogoHovered(false);

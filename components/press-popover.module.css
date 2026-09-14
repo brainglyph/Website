@@ -1,0 +1,140 @@
+.navAction {
+  position: relative;
+  color: #daff01;
+  font-family: "Aux", monospace;
+  text-decoration: none;
+}
+
+.trigger {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.navAction::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.25rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.navAction:hover::after,
+.trigger[aria-expanded="true"]::after,
+.navAction:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.trigger:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 0.45rem;
+}
+
+.panel {
+  position: fixed;
+  z-index: 8500;
+  aspect-ratio: 789 / 273;
+  color: var(--ink-black);
+  filter: drop-shadow(0 1rem 2.5rem rgba(0, 0, 0, 0.28));
+  isolation: isolate;
+}
+
+.panel::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--signal-yellow);
+  clip-path: polygon(
+    95.4% 100%,
+    100% 86.6%,
+    100% 10%,
+    calc(var(--panel-anchor) + 3.4%) 10%,
+    var(--panel-anchor) 0,
+    calc(var(--panel-anchor) - 3.4%) 10%,
+    4.6% 10%,
+    0 23.4%,
+    0 100%
+  );
+  content: "";
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.4rem 1.35rem 0.9rem;
+  transform: translateY(0.2rem);
+}
+
+.resource {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+  color: inherit;
+  font-family: "Aux", monospace;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.resource:focus-visible {
+  outline: none;
+}
+
+.resourceLabel {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.resourceLabel::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.18rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.resource:hover .resourceLabel::after,
+.resource:focus-visible .resourceLabel::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.meta {
+  min-width: 2.5rem;
+  opacity: 0.5;
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navAction::after {
+    transition: none;
+  }
+
+  .resourceLabel::after {
+    transition: none;
+  }
+}
