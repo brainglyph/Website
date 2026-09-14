@@ -3,6 +3,7 @@
 import {
   type AnchorHTMLAttributes,
   type CSSProperties,
+  type ReactNode,
   useEffect,
   useRef,
   useState,
@@ -27,10 +28,18 @@ type PanelPosition = CSSProperties & {
 
 type ResourceLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   label: string;
-  meta: string;
+  meta: ReactNode;
+  metaAriaLabel?: string;
+  metaIsIcon?: boolean;
 };
 
-function ResourceLink({ label, meta, ...props }: ResourceLinkProps) {
+export function ResourceLink({
+  label,
+  meta,
+  metaAriaLabel,
+  metaIsIcon = false,
+  ...props
+}: ResourceLinkProps) {
   const [isAnimated, setIsAnimated] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -42,7 +51,7 @@ function ResourceLink({ label, meta, ...props }: ResourceLinkProps) {
   return (
     <a
       {...props}
-      aria-label={`${label}, ${meta}`}
+      aria-label={metaAriaLabel ? `${label}, ${metaAriaLabel}` : label}
       className={styles.resource}
       onBlur={() => setIsAnimated(false)}
       onFocus={startAnimation}
@@ -56,14 +65,31 @@ function ResourceLink({ label, meta, ...props }: ResourceLinkProps) {
           label
         )}
       </span>
-      <span aria-hidden="true" className={styles.meta}>
+      <span
+        aria-hidden="true"
+        className={`${styles.meta} ${metaIsIcon ? styles.iconMeta : ""}`}
+      >
         {meta}
       </span>
     </a>
   );
 }
 
-export function PressPopover() {
+type NavPopoverProps = {
+  children: ReactNode;
+  id: string;
+  label: string;
+  panelClassName?: string;
+  panelLabel: string;
+};
+
+export function NavPopover({
+  children,
+  id,
+  label,
+  panelClassName,
+  panelLabel,
+}: NavPopoverProps) {
   const shouldReduceMotion = useReducedMotion();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
@@ -97,7 +123,7 @@ export function PressPopover() {
     setPosition({
       "--panel-anchor": `${Math.max(14, Math.min(86, anchor))}%`,
       left,
-      top: bounds.bottom + 10,
+      top: bounds.bottom + 15,
       width,
     });
   }
@@ -139,7 +165,7 @@ export function PressPopover() {
     <>
       <button
         ref={triggerRef}
-        aria-controls="press-resources"
+        aria-controls={id}
         aria-expanded={isOpen}
         className={`${styles.navAction} ${styles.trigger}`}
         type="button"
@@ -154,7 +180,7 @@ export function PressPopover() {
           panelRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
         }}
       >
-        <HoverGlyphLabel text="Press" />
+        <HoverGlyphLabel text={label} />
       </button>
       {isMounted &&
         createPortal(
@@ -163,10 +189,10 @@ export function PressPopover() {
               <motion.aside
                 ref={panelRef}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                aria-label="Press resources"
-                className={styles.panel}
+                aria-label={panelLabel}
+                className={`${styles.panel} ${panelClassName ?? ""}`}
                 exit={{ opacity: 0, scale: 0.97, y: -8 }}
-                id="press-resources"
+                id={id}
                 initial={{ opacity: 0, scale: 0.96, y: -10 }}
                 style={position}
                 transition={{
@@ -174,24 +200,31 @@ export function PressPopover() {
                   ease: [0.23, 1, 0.32, 1],
                 }}
               >
-                <div className={styles.content}>
-                  <ResourceLink
-                    download
-                    href="/files/Brainglyph_PressKit.zip"
-                    label="Download media kit"
-                    meta="27MB"
-                  />
-                  <ResourceLink
-                    href="mailto:hello@brainglyph.com"
-                    label="Send us a mail"
-                    meta="~"
-                  />
-                </div>
+                <div className={styles.content}>{children}</div>
               </motion.aside>
             )}
           </AnimatePresence>,
           document.body,
         )}
     </>
+  );
+}
+
+export function PressPopover() {
+  return (
+    <NavPopover id="press-resources" label="Press" panelLabel="Press resources">
+      <ResourceLink
+        download
+        href="/files/Brainglyph_PressKit.zip"
+        label="Download media kit"
+        meta="27MB"
+        metaAriaLabel="27 megabytes"
+      />
+      <ResourceLink
+        href="mailto:hello@brainglyph.com"
+        label="Send us a mail"
+        meta="~"
+      />
+    </NavPopover>
   );
 }

@@ -1,5 +1,6 @@
 import "@/styles/fonts.css";
 import "@/styles/globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "lenis/dist/lenis.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";

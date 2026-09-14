@@ -60,8 +60,11 @@ export const siteConfig = {
     },
   ],
   links: {
+    youtube: "https://www.youtube.com/channel/UCeoSz0hPS2aMPHh3hiE6czg",
+    tiktok: "https://www.tiktok.com/@brainglyph",
     github: "https://github.com/brainglyph",
     twitter: "https://x.com/brainglyph",
+    email: "mailto:hello@brainglyph.com",
     docs: "#",
     discord: "https://ourdiscordserver.com",
     sponsor: "#",

@@ -4,17 +4,11 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
-import clsx from "clsx";
 import Image from "next/image";
 import NextLink from "next/link";
 
-import navStyles from "./press-popover.module.css";
-
-import { DiscordIcon } from "@/components/icons";
-import { HoverGlyphLabel } from "@/components/hover-glyph-label";
 import { PressPopover } from "@/components/press-popover";
-import { siteConfig } from "@/config/site";
+import { SocialsPopover } from "@/components/socials-popover";
 
 export const Navbar = () => {
   return (
@@ -40,15 +34,9 @@ export const Navbar = () => {
           <span className="auxMono daff01 mr-5 mt-1">
             <PressPopover />
           </span>
-          <Link
-            isExternal
-            aria-label="Discord"
-            className={clsx(navStyles.navAction, "auxMono daff01 mr-0 mt-1")}
-            href={siteConfig.links.discord}
-            target="_self"
-          >
-            <HoverGlyphLabel text="Discord" />
-          </Link>
+          <span className="auxMono daff01 mr-0 mt-1">
+            <SocialsPopover />
+          </span>
         </NavbarItem>
       </NavbarContent>
 
@@ -56,9 +44,9 @@ export const Navbar = () => {
         <span className="auxMono daff01 text-sm">
           <PressPopover />
         </span>
-        <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-          <DiscordIcon className="text-default-500 iconFill" />
-        </Link>
+        <span className="auxMono daff01 text-sm">
+          <SocialsPopover />
+        </span>
       </NavbarContent>
     </NextUINavbar>
   );

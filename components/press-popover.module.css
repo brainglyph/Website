@@ -55,16 +55,21 @@
   background: var(--signal-yellow);
   clip-path: polygon(
     95.4% 100%,
-    100% 86.6%,
-    100% 10%,
-    calc(var(--panel-anchor) + 3.4%) 10%,
+    100% calc(100% - 0.9rem),
+    100% 0.7rem,
+    calc(var(--panel-anchor) + 3.4%) 0.7rem,
     var(--panel-anchor) 0,
-    calc(var(--panel-anchor) - 3.4%) 10%,
-    4.6% 10%,
-    0 23.4%,
+    calc(var(--panel-anchor) - 3.4%) 0.7rem,
+    4.6% 0.7rem,
+    0 1.6rem,
     0 100%
   );
   content: "";
+}
+
+.socialPanel {
+  aspect-ratio: auto;
+  height: 12.75rem;
 }
 
 .content {
@@ -127,6 +132,18 @@
   min-width: 2.5rem;
   opacity: 0.5;
   text-align: right;
+}
+
+.iconMeta {
+  min-width: 1.25rem;
+  opacity: 0.5;
+}
+
+.socialIcon,
+.socialIcon svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
