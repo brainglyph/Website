@@ -1,0 +1,281 @@
+.roster {
+  --roster-rule: color-mix(in srgb, var(--ink-black) 45%, transparent);
+
+  width: min(74rem, calc(100% - 3rem));
+  margin: clamp(3rem, 6vw, 5.5rem) auto 0;
+  border-top: 1px solid var(--roster-rule);
+  color: var(--ink-black);
+  font-family: "Aux", monospace;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  min-height: clamp(4.75rem, 7vw, 6.25rem);
+  grid-template-columns: clamp(2.75rem, 5vw, 4.5rem) minmax(0, 1fr);
+  align-items: center;
+  border-bottom: 1px solid var(--roster-rule);
+}
+
+.invertedRoster {
+  --roster-rule: color-mix(in srgb, var(--signal-yellow) 32%, transparent);
+
+  color: var(--signal-yellow);
+}
+
+.glyph {
+  width: 1.5em;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.8fr) auto minmax(17rem, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+  padding-right: clamp(0.25rem, 1vw, 1rem);
+}
+
+.name {
+  position: relative;
+  width: fit-content;
+  color: inherit;
+  font-size: clamp(1.35rem, 2.35vw, 2.3rem);
+  letter-spacing: -0.035em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.name:not(a) {
+  cursor: pointer;
+}
+
+.name::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.2em;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.name:hover::after,
+.name:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.name:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 0.4rem;
+}
+
+.separator {
+  font-size: clamp(0.85rem, 1.25vw, 1.05rem);
+  opacity: 0.45;
+}
+
+.role {
+  font-size: clamp(0.78rem, 1.15vw, 1rem);
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.invertedRoster .role {
+  display: flex;
+  min-height: 2.9em;
+  align-items: center;
+}
+
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8200;
+  width: clamp(10rem, 17vw, 13rem);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.advisorPreview {
+  display: grid;
+  width: min(34rem, calc(100vw - 2rem));
+  grid-template-columns: clamp(10rem, 17vw, 13rem) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.portraitFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--site-frame-radius);
+  background: var(--ink-black);
+  filter: drop-shadow(0 1rem 2.5rem rgba(0, 0, 0, 0.28))
+    drop-shadow(0 2.5rem 6rem rgba(0, 0, 0, 0.22));
+}
+
+.portrait {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.descriptionShell {
+  filter: drop-shadow(0 1rem 2.5rem rgba(0, 0, 0, 0.28))
+    drop-shadow(0 2.5rem 6rem rgba(0, 0, 0, 0.22));
+}
+
+.descriptionCard {
+  margin: 0;
+  padding: 1.25rem 1.35rem;
+  background: var(--signal-yellow);
+  clip-path: polygon(
+    0.75rem 0,
+    100% 0,
+    100% calc(100% - 0.75rem),
+    calc(100% - 0.75rem) 100%,
+    0 100%,
+    0 0.75rem
+  );
+  color: var(--ink-black);
+  font-family: "Aux", monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.035em;
+  line-height: 1.55;
+}
+
+.advisorsSection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: clamp(8rem, 12vw, 11rem) 0 clamp(7rem, 10vw, 10rem);
+  background: var(--ink-black);
+  color: var(--signal-yellow);
+}
+
+.advisorEdge {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  height: clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+  color: var(--signal-yellow);
+  line-height: 0;
+  pointer-events: none;
+}
+
+.advisorEdge svg {
+  width: 106%;
+  height: 100%;
+  margin-left: -3%;
+  fill: currentColor;
+  animation: advisor-zigzag-drift 6.5s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes advisor-zigzag-drift {
+  from {
+    transform: translate3d(-1.25%, 0, 0) scaleX(1.035);
+  }
+
+  to {
+    transform: translate3d(1.25%, 0, 0) scaleX(1.065);
+  }
+}
+
+.advisorIntro {
+  width: min(90%, 74rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.advisorHeading {
+  margin: 0;
+  color: var(--signal-yellow);
+}
+
+.advisorCopy {
+  max-width: 80%;
+  margin: 2.5rem auto 0;
+  color: #fffff0;
+}
+
+@media (max-width: 760px) {
+  .roster {
+    width: calc(100% - 2rem);
+  }
+
+  .row {
+    min-height: 5.5rem;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+  }
+
+  .details {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.45rem 0.8rem;
+    padding: 0.8rem 0;
+  }
+
+  .name {
+    grid-column: 1 / -1;
+    font-size: clamp(1.2rem, 6vw, 1.6rem);
+  }
+
+  .role {
+    font-size: 0.72rem;
+  }
+
+  .invertedRoster .role {
+    min-height: 0;
+  }
+
+  .advisorsSection {
+    padding-top: 6.5rem;
+  }
+
+  .advisorIntro {
+    width: calc(100% - 2rem);
+  }
+
+  .advisorCopy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) and (hover: hover) and (pointer: fine) {
+  .advisorPreview {
+    width: 16rem;
+    grid-template-columns: 1fr;
+  }
+
+  .advisorPreview .portraitFrame {
+    width: 10rem;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .preview {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name::after {
+    transition: none;
+  }
+
+  .advisorEdge svg {
+    animation: none;
+  }
+}

@@ -107,29 +107,48 @@ body::-webkit-scrollbar {
 .custom-shape-divider-top-1721854402 svg,
 .custom-shape-divider-bottom-1721854866 svg,
 .custom-shape-divider-bottom-1721854866-g svg,
-.custom-shape-divider-bottom-1721854866-gr svg {
-  width: 102%;
-  margin-left: -1%;
-  animation: zigzag-drift 9s ease-in-out infinite alternate;
+.custom-shape-divider-bottom-1721854866-gr svg,
+.team-zigzag svg {
+  width: 106%;
+  margin-left: -3%;
+  animation: zigzag-drift 6.5s ease-in-out infinite alternate;
   transform-origin: center;
   will-change: transform;
 }
 
 @keyframes zigzag-drift {
   from {
-    transform: translate3d(-0.35%, 0, 0) scaleX(1.012);
+    transform: translate3d(-1.25%, 0, 0) scaleX(1.035);
   }
 
   to {
-    transform: translate3d(0.35%, 0, 0) scaleX(1.026);
+    transform: translate3d(1.25%, 0, 0) scaleX(1.065);
   }
+}
+
+.team-zigzag {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: clamp(3rem, 7vw, 5.5rem);
+  overflow: hidden;
+  color: var(--signal-yellow);
+  line-height: 0;
+  pointer-events: none;
+}
+
+.team-zigzag svg {
+  height: 100%;
+  fill: currentColor;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .custom-shape-divider-top-1721854402 svg,
   .custom-shape-divider-bottom-1721854866 svg,
   .custom-shape-divider-bottom-1721854866-g svg,
-  .custom-shape-divider-bottom-1721854866-gr svg {
+  .custom-shape-divider-bottom-1721854866-gr svg,
+  .team-zigzag svg {
     animation: none;
   }
 }
