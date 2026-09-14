@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import {
-  AnimatePresence,
   motion,
   useInView,
   useMotionValue,
@@ -101,7 +100,7 @@ const TEAM_MEMBERS: readonly Person[] = [
     glyph: "¿",
     image: "/Eva.jpeg",
     linkedin: "https://www.linkedin.com/in/eva-martinez-sanchis/",
-    name: "Eva Martínez Sanchis",
+    name: "Eva M. Sanchis",
     role: "Environment Technical Artist",
   },
   // {
@@ -143,7 +142,7 @@ const ADVISORS: readonly Person[] = [
       "Brian focuses on helping people and teams execute their vision, ensuring each project reaches its full potential and creates memorable games.",
     glyph: "¥",
     image: "/brian.jpeg",
-    name: "Brian Martin Nielsen",
+    name: "Brian M. Nielsen",
     role: "CEO @ Kaiju Production",
   },
 ] as const;
@@ -240,37 +239,57 @@ function PeopleRoster({
   const pointerY = useMotionValue(-500);
   const x = useSpring(pointerX, { damping: 28, mass: 0.22, stiffness: 380 });
   const y = useSpring(pointerY, { damping: 28, mass: 0.22, stiffness: 380 });
-  const pointerPosition = useRef({ x: -1, y: -1 });
   const [activeMember, setActiveMember] = useState<Person | null>(null);
 
   useEffect(() => {
     let frame = 0;
     const clearPreview = () => setActiveMember(null);
-    const syncPreviewWithPointer = () => {
+    const findMemberForTrigger = (trigger: Element | null) => {
+      const hoveredName = trigger?.closest<HTMLElement>(
+        "[data-person-preview-trigger]",
+      )?.dataset.personName;
+
+      return people.find((person) => person.name === hoveredName) ?? null;
+    };
+    const syncPreviewWithHover = () => {
       window.cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(() => {
-        const { x: clientX, y: clientY } = pointerPosition.current;
-        const trigger = document
-          .elementFromPoint(clientX, clientY)
-          ?.closest<HTMLElement>("[data-person-preview-trigger]");
-        const hoveredName = trigger?.dataset.personName;
-        const hoveredMember = people.find(
-          (person) => person.name === hoveredName,
+        const hoveredTrigger = document.querySelector<HTMLElement>(
+          "[data-person-preview-trigger]:hover",
         );
 
-        setActiveMember(hoveredMember ?? null);
+        setActiveMember(findMemberForTrigger(hoveredTrigger));
       });
+    };
+    const syncPreviewWithPointer = (event: globalThis.PointerEvent) => {
+      if (event.pointerType !== "mouse") {
+        clearPreview();
+
+        return;
+      }
+
+      setActiveMember(
+        findMemberForTrigger(
+          event.target instanceof Element ? event.target : null,
+        ),
+      );
     };
 
     window.addEventListener("blur", clearPreview);
-    window.addEventListener("scroll", syncPreviewWithPointer, {
+    window.addEventListener("pointermove", syncPreviewWithPointer, {
+      passive: true,
+    });
+    window.addEventListener("resize", clearPreview);
+    window.addEventListener("scroll", syncPreviewWithHover, {
       passive: true,
     });
 
     return () => {
       window.cancelAnimationFrame(frame);
       window.removeEventListener("blur", clearPreview);
-      window.removeEventListener("scroll", syncPreviewWithPointer);
+      window.removeEventListener("pointermove", syncPreviewWithPointer);
+      window.removeEventListener("resize", clearPreview);
+      window.removeEventListener("scroll", syncPreviewWithHover);
     };
   }, [people]);
 
@@ -279,8 +298,6 @@ function PeopleRoster({
     immediate = false,
   ) {
     if (event.pointerType !== "mouse") return;
-
-    pointerPosition.current = { x: event.clientX, y: event.clientY };
 
     const previewWidth = previewRef.current?.offsetWidth ?? 208;
     const previewHeight = previewRef.current?.offsetHeight ?? 208;
@@ -326,39 +343,36 @@ function PeopleRoster({
         ))}
       </ul>
 
-      <AnimatePresence>
-        {activeMember && (
-          <motion.div
-            ref={previewRef}
-            animate={{ opacity: 1, scale: 1 }}
-            aria-hidden="true"
-            className={`${styles.preview} ${
-              activeMember.description ? styles.advisorPreview : ""
-            }`}
-            exit={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.97 }}
-            initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94 }}
-            style={{ x, y }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
-          >
-            <div className={styles.portraitFrame}>
-              <Image
-                fill
-                alt=""
-                className={styles.portrait}
-                sizes="(max-width: 900px) 10rem, 13rem"
-                src={activeMember.image}
-              />
+      {activeMember && (
+        <motion.div
+          ref={previewRef}
+          animate={{ opacity: 1, scale: 1 }}
+          aria-hidden="true"
+          className={`${styles.preview} ${
+            activeMember.description ? styles.advisorPreview : ""
+          }`}
+          initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94 }}
+          style={{ x, y }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
+        >
+          <div className={styles.portraitFrame}>
+            <Image
+              fill
+              alt=""
+              className={styles.portrait}
+              sizes="(max-width: 900px) 10rem, 13rem"
+              src={activeMember.image}
+            />
+          </div>
+          {activeMember.description && (
+            <div className={styles.descriptionShell}>
+              <p className={styles.descriptionCard}>
+                {activeMember.description}
+              </p>
             </div>
-            {activeMember.description && (
-              <div className={styles.descriptionShell}>
-                <p className={styles.descriptionCard}>
-                  {activeMember.description}
-                </p>
-              </div>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </motion.div>
+      )}
     </>
   );
 }

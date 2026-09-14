@@ -81,7 +81,7 @@
   inset: 10% 5%;
   z-index: -1;
   border-radius: 50%;
-  background: rgba(255, 209, 10, 0.34);
+  background: var(--ink-black);
   content: "";
   filter: blur(3rem);
   opacity: 0;
