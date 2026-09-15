@@ -1,0 +1,85 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--section-space-divider) 1.5rem var(--section-space);
+  background: var(--ink-black);
+  color: var(--signal-yellow);
+}
+
+.edge {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  height: clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+  color: var(--signal-yellow);
+  line-height: 0;
+  pointer-events: none;
+}
+
+.edge svg {
+  width: 106%;
+  height: 100%;
+  margin-left: -3%;
+  fill: currentColor;
+  animation: reach-out-edge-drift 6.5s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.content {
+  width: min(74rem, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  color: var(--signal-yellow);
+}
+
+.copy {
+  max-width: 46rem;
+  margin: var(--section-copy-gap) auto 0;
+  color: #fffff0;
+  font-family: var(--font-jura), sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.actions {
+  display: grid;
+  width: 100%;
+  margin: var(--section-content-gap) auto 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.actions > * {
+  width: 100%;
+}
+
+@keyframes reach-out-edge-drift {
+  from {
+    transform: translate3d(-1.25%, 0, 0) scaleX(1.035);
+  }
+
+  to {
+    transform: translate3d(1.25%, 0, 0) scaleX(1.065);
+  }
+}
+
+@media (max-width: 760px) {
+  .actions {
+    width: min(100%, 22rem);
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge svg {
+    animation: none;
+  }
+}

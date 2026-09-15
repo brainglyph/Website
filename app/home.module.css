@@ -1,0 +1,44 @@
+.teamSection {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  padding: var(--section-space) 0;
+  background: var(--signal-yellow);
+  color: var(--ink-black);
+  text-align: center;
+}
+
+.teamIntro {
+  width: min(90%, 74rem);
+  margin: 0 auto;
+}
+
+.teamHeading {
+  margin: 0;
+  color: var(--ink-black);
+}
+
+.teamCopy {
+  max-width: 60rem;
+  margin: var(--section-copy-gap) auto 0;
+  color: var(--ink-black);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.footer {
+  width: 100%;
+  padding: 1.75rem 1rem 1.5rem;
+  color: var(--signal-yellow);
+  text-align: center;
+}
+
+.footerHeading {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .teamIntro {
+    width: calc(100% - 2rem);
+  }
+}

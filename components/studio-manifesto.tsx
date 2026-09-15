@@ -66,59 +66,61 @@ export function StudioManifesto() {
       aria-labelledby="studio-manifesto-title"
       className={styles.section}
     >
-      <motion.div
-        aria-hidden="true"
-        className={styles.brainLockup}
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-        transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
-        viewport={{ amount: 0.4, once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
-        <span className={styles.brain} />
-        <span className={styles.glyphStage}>
-          <AnimatePresence initial={false} mode="popLayout">
-            {glyph === ASTERISK ? (
-              <motion.span
-                key={ASTERISK}
-                animate={{ opacity: 1, y: 0 }}
-                className={styles.asterisk}
-                exit={{ opacity: 0, y: -4 }}
-                initial={{ opacity: 0, y: 4 }}
-                transition={{ duration: shouldReduceMotion ? 0 : 0.06 }}
-              />
-            ) : (
-              <motion.span
-                key={glyph}
-                animate={{ opacity: 1, y: 0 }}
-                className={styles.glyph}
-                exit={{ opacity: 0, y: -4 }}
-                initial={{ opacity: 0, y: 4 }}
-                transition={{ duration: shouldReduceMotion ? 0 : 0.06 }}
-              >
-                {glyph}
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </span>
-      </motion.div>
+      <div className={styles.content}>
+        <motion.div
+          aria-hidden="true"
+          className={styles.brainLockup}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ amount: 0.4, once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <span className={styles.brain} />
+          <span className={styles.glyphStage}>
+            <AnimatePresence initial={false} mode="popLayout">
+              {glyph === ASTERISK ? (
+                <motion.span
+                  key={ASTERISK}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={styles.asterisk}
+                  exit={{ opacity: 0, y: -4 }}
+                  initial={{ opacity: 0, y: 4 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.06 }}
+                />
+              ) : (
+                <motion.span
+                  key={glyph}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={styles.glyph}
+                  exit={{ opacity: 0, y: -4 }}
+                  initial={{ opacity: 0, y: 4 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.06 }}
+                >
+                  {glyph}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </span>
+        </motion.div>
 
-      <motion.h2
-        className={styles.heading}
-        id="studio-manifesto-title"
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
-        transition={{
-          delay: shouldReduceMotion ? 0 : 0.1,
-          duration: 0.7,
-          ease: [0.23, 1, 0.32, 1],
-        }}
-        viewport={{ amount: 0.4, once: true }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
-        <span>At brainglyph, we&apos;re making games</span>
-        <span aria-live="polite" className={styles.scrambleLine}>
-          <GlyphRollText active={isInView} text={PHRASES[phraseIndex]} />
-        </span>
-      </motion.h2>
+        <motion.h2
+          className={styles.heading}
+          id="studio-manifesto-title"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+          transition={{
+            delay: shouldReduceMotion ? 0 : 0.1,
+            duration: 0.7,
+            ease: [0.23, 1, 0.32, 1],
+          }}
+          viewport={{ amount: 0.4, once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <span>At brainglyph, we&apos;re making games</span>
+          <span aria-live="polite" className={styles.scrambleLine}>
+            <GlyphRollText active={isInView} text={PHRASES[phraseIndex]} />
+          </span>
+        </motion.h2>
+      </div>
     </section>
   );
 }

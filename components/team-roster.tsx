@@ -103,6 +103,20 @@ const TEAM_MEMBERS: readonly Person[] = [
     name: "Eva M. Sanchis",
     role: "Environment Technical Artist",
   },
+  {
+    glyph: "∂",
+    image: "/Jonathan.jpg",
+    linkedin: "https://www.linkedin.com/in/jonathan-rozenberg/",
+    name: "Jonathan Rozenberg",
+    role: "Game Programming Intern",
+  },
+  {
+    glyph: "∫",
+    image: "/Will.jpg",
+    linkedin: "https://www.linkedin.com/in/william-chung-82845824b/",
+    name: "William Chung",
+    role: "Level Design Intern",
+  },
   // {
   //   glyph: "µ",
   //   image: "/mito.jpg",

@@ -42,8 +42,8 @@
 .face {
   border: 1px solid transparent;
   border-radius: 50%;
-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1))
-    drop-shadow(0 0 8px rgba(0, 0, 0, 0.95));
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.88))
+    drop-shadow(0 0 5px rgba(0, 0, 0, 0.72));
   transform: scale(1);
   transition:
     border-color 180ms cubic-bezier(0.23, 1, 0.32, 1),

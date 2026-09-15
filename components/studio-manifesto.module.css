@@ -5,12 +5,20 @@
   min-height: 64svh;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
-  padding: clamp(3rem, 5vw, 5rem) 1.5rem clamp(6rem, 9vw, 8rem);
+  padding: var(--section-space) 1.5rem;
   background: var(--ink-black);
   color: #daff01;
   text-align: center;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(clamp(-2.75rem, -3.5vw, -1.5rem));
 }
 
 .brainLockup {
@@ -86,7 +94,7 @@
 @media (max-width: 640px) {
   .section {
     min-height: 58svh;
-    padding: 3rem 1rem 5rem;
+    padding: var(--section-space) 1rem;
   }
 
   .heading {

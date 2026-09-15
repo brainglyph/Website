@@ -19,17 +19,14 @@ type GlyphRollTextProps = {
   text?: string;
 };
 
-const STANDARD_ROLL_DURATION_MS = 980;
-const STANDARD_DURATION_VARIANCE_MS = 120;
-const EARLY_ROLL_DURATION_MS = 740;
-const EARLY_DURATION_VARIANCE_MS = 120;
-const EARLY_RESOLVE_CHANCE = 28;
+const GLYPHS_PER_CHARACTER = 3;
+const ROLL_DURATION_MS = 1040;
+const ROLL_DURATION_VARIANCE_MS = 160;
 const SCATTER_PER_CHARACTER_MS = 7;
 const MAX_PROGRESSIVE_SCATTER_MS = 320;
 const RANDOM_SCATTER_MS = 32;
 const MAX_SCATTER_MS = MAX_PROGRESSIVE_SCATTER_MS + RANDOM_SCATTER_MS;
-const MAX_ROLL_DURATION_MS =
-  STANDARD_ROLL_DURATION_MS + STANDARD_DURATION_VARIANCE_MS;
+const MAX_ROLL_DURATION_MS = ROLL_DURATION_MS + ROLL_DURATION_VARIANCE_MS;
 
 export const GLYPH_ROLL_DURATION_MS = MAX_ROLL_DURATION_MS + MAX_SCATTER_MS;
 
@@ -108,12 +105,10 @@ export function GlyphRollText({
                 {Array.from(word).map((character) => {
                   const index = characterIndex++;
                   const characterSeed = (baseSeed + index * 2654435761) >>> 0;
-                  const resolvesEarly =
-                    (characterSeed >>> 7) % 100 < EARLY_RESOLVE_CHANCE;
-                  const glyphCount = resolvesEarly
-                    ? 5 + (characterSeed % 2)
-                    : 8 + (characterSeed % 2);
-                  const reelGlyphs = buildGlyphReel(characterSeed, glyphCount);
+                  const reelGlyphs = buildGlyphReel(
+                    characterSeed,
+                    GLYPHS_PER_CHARACTER,
+                  );
                   const progressiveDelay = Math.min(
                     index * SCATTER_PER_CHARACTER_MS,
                     MAX_PROGRESSIVE_SCATTER_MS,
@@ -121,11 +116,9 @@ export function GlyphRollText({
                   const randomDelay =
                     (characterSeed >>> 13) % RANDOM_SCATTER_MS;
                   const delay = (progressiveDelay + randomDelay) / 1000;
-                  const duration = resolvesEarly
-                    ? EARLY_ROLL_DURATION_MS +
-                      ((characterSeed >>> 17) % EARLY_DURATION_VARIANCE_MS)
-                    : STANDARD_ROLL_DURATION_MS +
-                      ((characterSeed >>> 17) % STANDARD_DURATION_VARIANCE_MS);
+                  const duration =
+                    ROLL_DURATION_MS +
+                    ((characterSeed >>> 17) % ROLL_DURATION_VARIANCE_MS);
                   const characterClass = `${styles.reelCharacter} ${
                     segment.emphasis ? styles.emphasis : ""
                   }`;

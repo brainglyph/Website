@@ -1,0 +1,149 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--section-space-divider) 0 var(--section-space);
+  background: var(--signal-yellow);
+  color: var(--ink-black);
+}
+
+.edge {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  height: clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+  color: var(--ink-black);
+  line-height: 0;
+  pointer-events: none;
+}
+
+.edge svg {
+  width: 106%;
+  height: 100%;
+  margin-left: -3%;
+  fill: currentColor;
+  animation: supporter-edge-drift 6.5s ease-in-out infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.content {
+  width: min(74rem, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0;
+  color: var(--ink-black);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  margin: var(--section-content-gap) 0 0;
+  padding: 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink-black) 42%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--ink-black) 42%, transparent);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+}
+
+.cell {
+  position: relative;
+  display: grid;
+  min-height: clamp(12rem, 19vw, 16rem);
+  place-items: center;
+  padding: 3rem 2rem 2rem;
+  border-right: 1px solid color-mix(in srgb, var(--ink-black) 42%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink-black) 42%, transparent);
+}
+
+.index {
+  position: absolute;
+  top: 1rem;
+  left: 1.125rem;
+  font-family: "Aux", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  opacity: 0.62;
+}
+
+.logo {
+  display: block;
+  width: 82%;
+  height: 7rem;
+  background: var(--ink-black);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.ituLogo {
+  mask-image: url("/ITUNextGen.png");
+  -webkit-mask-image: url("/ITUNextGen.png");
+}
+
+.innovationFundLogo {
+  width: 90%;
+  height: 5rem;
+  mask-image: url("/Innovationsfonden.png");
+  -webkit-mask-image: url("/Innovationsfonden.png");
+}
+
+.creativeEuropeLogo {
+  width: 78%;
+  height: 7.5rem;
+  mask-image: url("/eu.png");
+  -webkit-mask-image: url("/eu.png");
+}
+
+@keyframes supporter-edge-drift {
+  from {
+    transform: translate3d(-1.25%, 0, 0) scaleX(1.035);
+  }
+
+  to {
+    transform: translate3d(1.25%, 0, 0) scaleX(1.065);
+  }
+}
+
+@media (max-width: 760px) {
+  .content {
+    width: calc(100% - 2rem);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cell {
+    min-height: 11rem;
+  }
+
+  .logo {
+    width: min(72%, 20rem);
+    height: 5.5rem;
+  }
+
+  .innovationFundLogo {
+    width: min(82%, 23rem);
+    height: 4rem;
+  }
+
+  .creativeEuropeLogo {
+    width: min(68%, 18rem);
+    height: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge svg {
+    animation: none;
+  }
+}

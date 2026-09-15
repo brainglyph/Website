@@ -2,7 +2,7 @@
   --roster-rule: color-mix(in srgb, var(--ink-black) 45%, transparent);
 
   width: min(74rem, calc(100% - 3rem));
-  margin: clamp(3rem, 6vw, 5.5rem) auto 0;
+  margin: var(--section-content-gap) auto 0;
   border-top: 1px solid var(--roster-rule);
   color: var(--ink-black);
   font-family: "Aux", monospace;
@@ -157,7 +157,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: clamp(8rem, 12vw, 11rem) 0 clamp(7rem, 10vw, 10rem);
+  padding: var(--section-space-divider) 0 var(--section-space);
   background: var(--ink-black);
   color: var(--signal-yellow);
 }
@@ -207,7 +207,7 @@
 
 .advisorCopy {
   max-width: 80%;
-  margin: 2.5rem auto 0;
+  margin: var(--section-copy-gap) auto 0;
   color: #fffff0;
 }
 
@@ -238,10 +238,6 @@
 
   .invertedRoster .role {
     min-height: 0;
-  }
-
-  .advisorsSection {
-    padding-top: 6.5rem;
   }
 
   .advisorIntro {

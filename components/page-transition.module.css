@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  inset: var(--site-frame-inset);
+  z-index: 9800;
+  border-radius: var(--site-frame-radius);
+  background: var(--signal-yellow);
+  pointer-events: none;
+  touch-action: none;
+  transform: translate3d(0, 101%, 0);
+  will-change: transform;
+}
+
+.overlay[data-active] {
+  pointer-events: auto;
+}
+
+.snapshot {
+  position: fixed;
+  inset: 0;
+  z-index: 9700;
+  overflow: hidden;
+  background: var(--ink-black);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    display: none;
+  }
+}

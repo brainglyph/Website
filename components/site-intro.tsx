@@ -12,11 +12,16 @@ const MINIMUM_DISPLAY_MS = 1500;
 const MARK_HOLD_MS = 320;
 const GLYPH_INTERVAL_MS = 120;
 let hasPlayedIntro = false;
+let hasFinishedIntro = false;
 
 export const SITE_INTRO_REVEAL_EVENT = "brainglyph:intro-reveal";
 
 export function hasSiteIntroPlayed() {
   return hasPlayedIntro;
+}
+
+export function hasSiteIntroFinished() {
+  return hasFinishedIntro;
 }
 
 export function SiteIntro() {
@@ -57,6 +62,7 @@ export function SiteIntro() {
       setShowMark(true);
 
       const timeoutId = window.setTimeout(() => {
+        hasFinishedIntro = true;
         window.dispatchEvent(new Event(SITE_INTRO_REVEAL_EVENT));
         setIsVisible(false);
       }, MARK_HOLD_MS);
@@ -76,7 +82,7 @@ export function SiteIntro() {
       {isVisible && (
         <motion.div
           key="site-intro"
-          aria-label="Loading Heli.os"
+          aria-label="Loading brainglyph"
           className={styles.overlay}
           exit={
             shouldReduceMotion

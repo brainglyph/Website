@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Navbar as NextUINavbar,
   NavbarBrand,
@@ -6,16 +8,56 @@ import {
 } from "@nextui-org/navbar";
 import Image from "next/image";
 import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { PressPopover } from "@/components/press-popover";
 import { SocialsPopover } from "@/components/socials-popover";
 
 export const Navbar = () => {
+  const pathname = usePathname();
+  const [hasBackground, setHasBackground] = useState(false);
+
+  useEffect(() => {
+    let frame = 0;
+    const syncBackground = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        const trigger = document.querySelector<HTMLElement>(
+          "[data-navbar-background-trigger]",
+        );
+        const navbar = document.querySelector<HTMLElement>(".site-navbar");
+
+        setHasBackground(
+          Boolean(
+            trigger &&
+            trigger.getBoundingClientRect().top <=
+              (navbar?.getBoundingClientRect().bottom ?? 66),
+          ),
+        );
+      });
+    };
+
+    syncBackground();
+    window.addEventListener("scroll", syncBackground, { passive: true });
+    window.addEventListener("resize", syncBackground);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", syncBackground);
+      window.removeEventListener("resize", syncBackground);
+    };
+  }, [pathname]);
+
+  if (pathname === "/sequence") return null;
+
   return (
     <NextUINavbar
-      className="site-navbar bg1d1d1b"
+      className="site-navbar"
+      data-scrolled={hasBackground || undefined}
+      isBlurred={false}
       maxWidth="2xl"
-      position="sticky"
+      position="static"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">

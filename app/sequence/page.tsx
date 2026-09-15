@@ -1,68 +1,104 @@
 "use client";
 
-import { subtitle, title } from "@/components/primitives";
-import clsx from "clsx";
-import Image from "next/image";
-import Typewriter from "typewriter-effect";
-import React, { useEffect, useRef, useState } from "react";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
-import { DiscordIcon, TikTokIcon, YoutubeIcon } from "@/components/icons";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-export default function FollowUsPage() {
-  const glyphArray = ["☐", "C", "D", "H", "I", "J", "3", "4"];
-  const [currentGlyph, setCurrentGlyph] = useState(glyphArray[0]);
-  const currentGlyphRef = useRef(currentGlyph);
-  const [showImage, setShowImage] = useState(false);
+import styles from "./sequence.module.css";
 
-  //find the navbar and hide it
-  useEffect(() => {
-    const nav = document.querySelector("nav");
-    if (nav) {
-      nav.classList.add("hidden");
-    }
-  }, []);
+import {
+  hasSiteIntroFinished,
+  SITE_INTRO_REVEAL_EVENT,
+} from "@/components/site-intro";
+
+const GLYPH_SEQUENCE = ["☐", "C", "D", "H", "I", "J", "3", "4"] as const;
+const GLYPH_HOLD_MS = 500;
+const ASTERISK_HOLD_MS = 2000;
+
+export default function SequencePage() {
+  const shouldReduceMotion = useReducedMotion();
+  const [glyphIndex, setGlyphIndex] = useState(0);
+  const [isActive, setIsActive] = useState(() => hasSiteIntroFinished());
+  const [showAsterisk, setShowAsterisk] = useState(false);
 
   useEffect(() => {
-    let interval: any;
+    if (isActive) return;
 
-    const changeGlyph = () => {
-      setCurrentGlyph(prevGlyph => {
-        const nextIndex = (glyphArray.indexOf(prevGlyph) + 1) % glyphArray.length;
-        const nextGlyph = glyphArray[nextIndex];
-        currentGlyphRef.current = nextGlyph;
-        return nextGlyph;
-      });
+    const beginSequence = () => setIsActive(true);
 
-      if (currentGlyphRef.current === glyphArray[glyphArray.length - 1]) {
-        setShowImage(true);
+    window.addEventListener(SITE_INTRO_REVEAL_EVENT, beginSequence, {
+      once: true,
+    });
 
-        clearInterval(interval);
+    return () =>
+      window.removeEventListener(SITE_INTRO_REVEAL_EVENT, beginSequence);
+  }, [isActive]);
 
-        setTimeout(() => {
-          setShowImage(false);
-          setCurrentGlyph(glyphArray[0]);
+  useEffect(() => {
+    if (!isActive) return;
 
-          interval = setInterval(changeGlyph, 500);
-        }, 2000);
-      }
-    };
+    const timeoutId = window.setTimeout(
+      () => {
+        if (showAsterisk) {
+          setShowAsterisk(false);
+          setGlyphIndex(0);
 
-    interval = setInterval(changeGlyph, 500);
-    return () => clearInterval(interval);
-  }, []);
+          return;
+        }
+
+        if (glyphIndex === GLYPH_SEQUENCE.length - 1) {
+          setShowAsterisk(true);
+
+          return;
+        }
+
+        setGlyphIndex((currentIndex) => currentIndex + 1);
+      },
+      showAsterisk ? ASTERISK_HOLD_MS : GLYPH_HOLD_MS,
+    );
+
+    return () => window.clearTimeout(timeoutId);
+  }, [glyphIndex, isActive, showAsterisk]);
+
+  const currentGlyph = GLYPH_SEQUENCE[glyphIndex];
 
   return (
-    <section className="">
-      <div
-        className="fullHeight bgDaff01 inline-block w-full text-center justify-center lineHeightLoose">
-        <div className="mt-64 enlarge">
-          <span className="hidden">Knowledge comes to those who seek it.</span>
-          <span className={clsx("glyph col1d1d1b auxMono", showImage && "invisible")}>{currentGlyph}{showImage &&
-            <Image src="/astBlack.svg" alt="Ast Black Image" width="135" height="0" className={"astGlyph"} />
-          }</span>
-          <Image src="/logoBlackEmpty.svg" alt={""} width="130" height="0" className={"mx-auto mb-10"} />
-        </div>
+    <section aria-label="Glyph sequence" className={styles.page}>
+      <span className={styles.clue}>Knowledge comes to those who seek it.</span>
+
+      <div aria-live="polite" className={styles.brainLockup}>
+        <span aria-hidden="true" className={styles.brain} />
+        <span className={styles.glyphStage}>
+          <AnimatePresence initial={false} mode="popLayout">
+            {showAsterisk ? (
+              <motion.span
+                key="asterisk"
+                animate={{ opacity: 1, y: 0 }}
+                aria-label="Asterisk"
+                className={styles.asterisk}
+                exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -8 }}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.08,
+                  ease: [0.2, 0.82, 0.25, 1],
+                }}
+              />
+            ) : (
+              <motion.span
+                key={`${glyphIndex}-${currentGlyph}`}
+                animate={{ opacity: 1, y: 0 }}
+                className={styles.glyph}
+                exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -8 }}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.08,
+                  ease: [0.2, 0.82, 0.25, 1],
+                }}
+              >
+                {currentGlyph}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </span>
       </div>
     </section>
   );

@@ -2,19 +2,19 @@ import "@/styles/fonts.css";
 import "@/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "lenis/dist/lenis.css";
-import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
+import { Analytics } from "@vercel/analytics/next";
 import clsx from "clsx";
+import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontJura, fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { PageTransition } from "@/components/page-transition";
+import { SiteIntro } from "@/components/site-intro";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { CustomCursor } from "@/components/custom-cursor";
-
-import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -96,6 +96,8 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <SmoothScroll />
+          <SiteIntro />
+          <PageTransition />
           <CustomCursor />
           <div className="site-shell relative flex flex-col">
             <Navbar />
