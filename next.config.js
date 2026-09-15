@@ -3,6 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/press',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/pitchdeck',
         destination: 'https://www.figma.com/deck/mywjSzASueyMwqijQHbwao/Heli.os---Public-Pitch-Deck',
         permanent: true,

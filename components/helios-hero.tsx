@@ -26,12 +26,27 @@ const INTRO_CONTENT_DELAY_MS = 260;
 const STEAM_WISHLIST_URL =
   "https://store.steampowered.com/search/?term=Heli.os";
 
+function supportsTransparentWebm() {
+  const userAgent = navigator.userAgent;
+  const isIos =
+    /iPad|iPhone|iPod/.test(userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const isSafari =
+    navigator.vendor.includes("Apple") && /Safari/.test(userAgent);
+  const video = document.createElement("video");
+
+  return (
+    !isIos && !isSafari && video.canPlayType('video/webm; codecs="vp8"') !== ""
+  );
+}
+
 export function HeliosHero() {
   const logoHitbox = useRef<HTMLHeadingElement>(null);
   const revealTimeout = useRef<number>();
   const prefersReducedMotion = useReducedMotion();
   const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [hasEntered, setHasEntered] = useState(hasSiteIntroPlayed);
+  const [canAnimateLogo, setCanAnimateLogo] = useState(false);
   const logoX = useMotionValue(0);
   const logoY = useMotionValue(0);
   const springX = useSpring(logoX, { damping: 22, stiffness: 180, mass: 0.45 });
@@ -56,6 +71,10 @@ export function HeliosHero() {
       window.clearTimeout(revealTimeout.current);
       window.removeEventListener(SITE_INTRO_REVEAL_EVENT, revealHero);
     };
+  }, [prefersReducedMotion]);
+
+  useEffect(() => {
+    setCanAnimateLogo(!prefersReducedMotion && supportsTransparentWebm());
   }, [prefersReducedMotion]);
 
   function resetLogo() {
@@ -178,18 +197,35 @@ export function HeliosHero() {
                 style={{ x: springX, y: springY }}
                 transition={{ duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  aria-hidden="true"
-                  className={styles.logo}
-                  poster="/heliosLogo.png"
-                  preload="auto"
-                >
-                  <source src="/helios-logo.webm" type="video/webm" />
-                </video>
+                {canAnimateLogo ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-hidden="true"
+                    className={styles.logo}
+                    poster="/heliosLogo.png"
+                    preload="auto"
+                    onError={() => setCanAnimateLogo(false)}
+                  >
+                    <source
+                      src="/helios-logo.webm"
+                      type='video/webm; codecs="vp8"'
+                    />
+                  </video>
+                ) : (
+                  <Image
+                    priority
+                    alt=""
+                    aria-hidden="true"
+                    className={styles.logo}
+                    height={1024}
+                    sizes="(max-width: 640px) 80vw, 61.5vw"
+                    src="/heliosLogo.png"
+                    width={2000}
+                  />
+                )}
               </motion.div>
             </a>
           </h1>

@@ -17,25 +17,42 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://brainglyph.com"),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: [
-    {
-      rel: "icon",
-      type: "image/x-icon",
-      url: "/favicon.png",
-      media: "(prefers-color-scheme: dark)",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      url: "/favicon_dark.png",
-      media: "(prefers-color-scheme: light)",
-    },
-  ],
+  icons: {
+    apple: [{ url: "/site-icon.png", sizes: "512x512", type: "image/png" }],
+    icon: [
+      { url: "/site-icon.png", sizes: "512x512", type: "image/png" },
+      {
+        url: "/favicon-light.png",
+        media: "(prefers-color-scheme: light)",
+        sizes: "512x512",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-dark.png",
+        media: "(prefers-color-scheme: dark)",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+  },
+  openGraph: {
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    type: "website",
+    url: "/",
+  },
+  twitter: {
+    card: "summary",
+    description: siteConfig.description,
+    title: siteConfig.name,
+  },
 };
 
 export const viewport: Viewport = {
