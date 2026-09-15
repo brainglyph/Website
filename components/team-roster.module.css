@@ -219,6 +219,7 @@
   .row {
     min-height: 5.5rem;
     grid-template-columns: 2.4rem minmax(0, 1fr);
+    column-gap: 0.5rem;
   }
 
   .details {

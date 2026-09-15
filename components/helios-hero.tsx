@@ -18,7 +18,7 @@ import {
   SITE_INTRO_REVEAL_EVENT,
 } from "@/components/site-intro";
 
-const MAGNETIC_PADDING = 75;
+const MAGNETIC_PADDING = 100;
 const MAGNETIC_STRENGTH = 10;
 const MAX_OFFSET_X = 36;
 const MAX_OFFSET_Y = 28;
@@ -178,15 +178,18 @@ export function HeliosHero() {
                 style={{ x: springX, y: springY }}
                 transition={{ duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
               >
-                <Image
-                  priority
-                  alt=""
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-hidden="true"
                   className={styles.logo}
-                  height={1024}
-                  sizes="(max-width: 768px) 92vw, 928px"
-                  src="/heliosLogo.png"
-                  width={2000}
-                />
+                  poster="/heliosLogo.png"
+                  preload="auto"
+                >
+                  <source src="/helios-logo.webm" type="video/webm" />
+                </video>
               </motion.div>
             </a>
           </h1>

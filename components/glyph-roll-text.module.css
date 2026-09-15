@@ -7,10 +7,6 @@
   white-space: nowrap;
 }
 
-.space {
-  white-space: pre;
-}
-
 .cell {
   position: relative;
   display: inline-block;

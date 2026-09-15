@@ -100,7 +100,9 @@
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 2000 / 1024;
   filter: drop-shadow(0 0.75rem 2.5rem rgba(0, 0, 0, 0.55));
+  object-fit: contain;
 }
 
 .description {

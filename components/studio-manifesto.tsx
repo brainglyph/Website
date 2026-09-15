@@ -61,10 +61,17 @@ export function StudioManifesto() {
   }, [isInView, phraseIndex, shouldReduceMotion]);
 
   return (
-    <section
+    <motion.section
       ref={sectionRef}
       aria-labelledby="studio-manifesto-title"
       className={styles.section}
+      layout={shouldReduceMotion ? false : "size"}
+      transition={{
+        layout: {
+          duration: 0.58,
+          ease: [0.76, 0, 0.24, 1],
+        },
+      }}
     >
       <div className={styles.content}>
         <motion.div
@@ -121,6 +128,6 @@ export function StudioManifesto() {
           </span>
         </motion.h2>
       </div>
-    </section>
+    </motion.section>
   );
 }

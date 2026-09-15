@@ -9,6 +9,7 @@
   --ink-black: #10110f;
   --section-space: clamp(6rem, 9vw, 8rem);
   --section-space-divider: clamp(8rem, 12vw, 11rem);
+  --section-divider-height: clamp(3rem, 7vw, 5.5rem);
   --section-content-gap: clamp(3rem, 5vw, 4rem);
   --section-copy-gap: 1.5rem;
 }
@@ -167,7 +168,7 @@ body::-webkit-scrollbar {
   right: 0;
   bottom: 100%;
   left: 0;
-  height: clamp(3rem, 7vw, 5.5rem);
+  height: var(--section-divider-height);
   overflow: hidden;
   color: var(--signal-yellow);
   line-height: 0;

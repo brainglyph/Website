@@ -87,14 +87,7 @@ export function GlyphRollText({
             if (/^\s+$/.test(word)) {
               characterIndex += word.length;
 
-              return (
-                <span
-                  key={`${segmentIndex}-${wordIndex}-space`}
-                  className={styles.space}
-                >
-                  {word}
-                </span>
-              );
+              return word;
             }
 
             return (
