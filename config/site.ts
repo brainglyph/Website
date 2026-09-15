@@ -9,6 +9,6 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@brainglyph",
     twitter: "https://x.com/brainglyph",
     email: "mailto:hello@brainglyph.com",
-    discord: "https://discord.gg/compact-claustrophobia-650043435243405352",
+    discord: "https://ourdiscordserver.com",
   },
 };

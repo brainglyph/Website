@@ -31,7 +31,7 @@ const SOCIAL_LINKS = [
   {
     href: siteConfig.links.discord,
     icon: <DiscordIcon />,
-    label: "Discord",
+    label: "Discord*",
   },
   {
     href: siteConfig.links.email,
@@ -59,6 +59,9 @@ export function SocialsPopover() {
           target={href.startsWith("mailto:") ? undefined : "_blank"}
         />
       ))}
+      <p className={styles.socialFootnote}>
+        *Yes, we do own ourdiscordserver.com ;)
+      </p>
     </NavPopover>
   );
 }
