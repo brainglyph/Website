@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
-import styles from "./custom-cursor.module.css";
-
 import { BRAINGLYPH_GLYPHS, getRandomGlyph } from "@/lib/glyphs";
+
+import styles from "./custom-cursor.module.css";
 
 const INTERACTIVE_SELECTOR = [
   "a",

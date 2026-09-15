@@ -1,9 +1,9 @@
 import clsx from "clsx";
 
-import styles from "./supporters-section.module.css";
-
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { title } from "@/components/primitives";
+
+import styles from "./supporters-section.module.css";
 
 const SUPPORTERS = [
   {

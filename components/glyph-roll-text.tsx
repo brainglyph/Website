@@ -3,9 +3,9 @@
 import { useMemo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-import styles from "./glyph-roll-text.module.css";
-
 import { BRAINGLYPH_GLYPHS } from "@/lib/glyphs";
+
+import styles from "./glyph-roll-text.module.css";
 
 export type GlyphTextSegment = {
   emphasis?: boolean;

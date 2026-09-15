@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-import styles from "./reach-out-section.module.css";
-
 import { DiscordIcon, EmailIcon } from "@/components/icons";
 import { title } from "@/components/primitives";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SignalButton } from "@/components/signal-button";
+
+import styles from "./reach-out-section.module.css";
 
 export function ReachOutSection() {
   return (

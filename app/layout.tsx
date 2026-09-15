@@ -6,8 +6,6 @@ import { Analytics } from "@vercel/analytics/next";
 import clsx from "clsx";
 import { Metadata, Viewport } from "next";
 
-import { Providers } from "./providers";
-
 import { siteConfig } from "@/config/site";
 import { fontJura, fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
@@ -15,6 +13,8 @@ import { PageTransition } from "@/components/page-transition";
 import { SiteIntro } from "@/components/site-intro";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { CustomCursor } from "@/components/custom-cursor";
+
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
@@ -51,42 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <head>
-        <meta
-          property="og:title"
-          content="We're making games you can't stop thinking about"
-        />
-        <meta
-          property="og:description"
-          content="brainglyph is an independent game development duo working on heli.os."
-        />
-        <meta
-          property="og:image"
-          content="https://s1.gifyu.com/images/SBAZG.gif"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:domain"
-          content="localhost-og-checker.vercel.app"
-        />
-        <meta
-          property="twitter:url"
-          content="https://localhost-og-checker.vercel.app/66df2d6897123e7b91ed8f5d"
-        />
-        <meta
-          name="twitter:title"
-          content="We're making games you can't stop thinking about"
-        />
-        <meta
-          name="twitter:description"
-          content="brainglyph is an independent game development duo working on heli.os."
-        />
-        <meta
-          name="twitter:image"
-          content="https://s1.gifyu.com/images/SBAZG.gif"
-        />
-      </head>
+    <html className="dark" lang="en">
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
@@ -94,14 +59,14 @@ export default function RootLayout({
           fontJura.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers>
           <SmoothScroll />
           <SiteIntro />
           <PageTransition />
           <CustomCursor />
           <div className="site-shell relative flex flex-col">
             <Navbar />
-            <main className={clsx("flex-grow bg1d1d1b")}>
+            <main className="flex-grow">
               {children}
               <Analytics />
             </main>

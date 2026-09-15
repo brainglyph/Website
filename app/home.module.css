@@ -2,10 +2,48 @@
   position: relative;
   z-index: 4;
   width: 100%;
-  padding: var(--section-space) 0;
+  padding: clamp(4rem, 6vw, 5rem) 0 var(--section-space);
   background: var(--signal-yellow);
   color: var(--ink-black);
   text-align: center;
+}
+
+.teamZigzag {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: var(--section-divider-height);
+  overflow: hidden;
+  color: var(--signal-yellow);
+  line-height: 0;
+  pointer-events: none;
+}
+
+.teamZigzag svg {
+  width: 106%;
+  height: 100%;
+  margin-left: -3%;
+  animation: zigzag-drift 6.5s ease-in-out infinite alternate;
+  fill: currentColor;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes zigzag-drift {
+  from {
+    transform: translate3d(-1.25%, 0, 0) scaleX(1.035);
+  }
+
+  to {
+    transform: translate3d(1.25%, 0, 0) scaleX(1.065);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teamZigzag svg {
+    animation: none;
+  }
 }
 
 .teamIntro {

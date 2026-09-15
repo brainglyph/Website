@@ -4,9 +4,9 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import styles from "./site-intro.module.css";
-
 import { BRAINGLYPH_GLYPHS, getRandomGlyph } from "@/lib/glyphs";
+
+import styles from "./site-intro.module.css";
 
 const MINIMUM_DISPLAY_MS = 1500;
 const MARK_HOLD_MS = 320;

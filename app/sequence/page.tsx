@@ -3,12 +3,12 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import styles from "./sequence.module.css";
-
 import {
   hasSiteIntroFinished,
   SITE_INTRO_REVEAL_EVENT,
 } from "@/components/site-intro";
+
+import styles from "./sequence.module.css";
 
 const GLYPH_SEQUENCE = ["☐", "C", "D", "H", "I", "J", "3", "4"] as const;
 const GLYPH_HOLD_MS = 500;

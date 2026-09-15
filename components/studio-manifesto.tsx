@@ -8,13 +8,13 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import styles from "./studio-manifesto.module.css";
-
 import {
   GLYPH_ROLL_DURATION_MS,
   GlyphRollText,
 } from "@/components/glyph-roll-text";
 import { getRandomGlyph } from "@/lib/glyphs";
+
+import styles from "./studio-manifesto.module.css";
 
 const ASTERISK = "asterisk";
 const GLYPH_INTERVAL_MS = 340;

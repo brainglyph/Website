@@ -9,14 +9,14 @@ import {
   useSpring,
 } from "framer-motion";
 
-import styles from "./helios-hero.module.css";
-
 import { SignalButton } from "@/components/signal-button";
 import { GlyphRollText } from "@/components/glyph-roll-text";
 import {
   hasSiteIntroPlayed,
   SITE_INTRO_REVEAL_EVENT,
 } from "@/components/site-intro";
+
+import styles from "./helios-hero.module.css";
 
 const MAGNETIC_PADDING = 100;
 const MAGNETIC_STRENGTH = 10;

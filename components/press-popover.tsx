@@ -11,10 +11,10 @@ import {
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
-import styles from "./press-popover.module.css";
-
 import { GlyphRollText } from "@/components/glyph-roll-text";
 import { HoverGlyphLabel } from "@/components/hover-glyph-label";
+
+import styles from "./press-popover.module.css";
 
 const PANEL_MAX_WIDTH = 316;
 const PANEL_GUTTER = 12;

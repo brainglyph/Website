@@ -1,13 +1,13 @@
 import clsx from "clsx";
 
-import styles from "./home.module.css";
-
 import { title } from "@/components/primitives";
 import { HeliosHero } from "@/components/helios-hero";
 import { ReachOutSection } from "@/components/reach-out-section";
 import { StudioManifesto } from "@/components/studio-manifesto";
 import { SupportersSection } from "@/components/supporters-section";
 import { AdvisorsSection, TeamRoster } from "@/components/team-roster";
+
+import styles from "./home.module.css";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         <HeliosHero />
         <StudioManifesto />
         <section data-navbar-background-trigger className={styles.teamSection}>
-          <div aria-hidden="true" className="team-zigzag">
+          <div aria-hidden="true" className={styles.teamZigzag}>
             <svg
               preserveAspectRatio="none"
               viewBox="0 0 1200 90"

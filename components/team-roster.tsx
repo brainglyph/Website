@@ -11,10 +11,10 @@ import {
 } from "framer-motion";
 import { PointerEvent, useEffect, useRef, useState } from "react";
 
-import styles from "./team-roster.module.css";
-
 import { GlyphRollText } from "@/components/glyph-roll-text";
 import { title } from "@/components/primitives";
+
+import styles from "./team-roster.module.css";
 
 type Person = {
   description?: string;

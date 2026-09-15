@@ -3,9 +3,9 @@
 import { ComponentPropsWithoutRef, ReactNode, useState } from "react";
 import clsx from "clsx";
 
-import styles from "./signal-button.module.css";
-
 import { GlyphRollText } from "@/components/glyph-roll-text";
+
+import styles from "./signal-button.module.css";
 
 type SignalButtonProps = ComponentPropsWithoutRef<"a"> & {
   icon?: ReactNode;

@@ -1,7 +1,5 @@
 "use client";
 
-import styles from "./press-popover.module.css";
-
 import {
   DiscordIcon,
   EmailIcon,
@@ -11,6 +9,8 @@ import {
 } from "@/components/icons";
 import { NavPopover, ResourceLink } from "@/components/press-popover";
 import { siteConfig } from "@/config/site";
+
+import styles from "./press-popover.module.css";
 
 const SOCIAL_LINKS = [
   {
