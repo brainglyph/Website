@@ -6,12 +6,54 @@ import { ReachOutSection } from "@/components/reach-out-section";
 import { StudioManifesto } from "@/components/studio-manifesto";
 import { SupportersSection } from "@/components/supporters-section";
 import { AdvisorsSection, TeamRoster } from "@/components/team-roster";
+import { siteConfig } from "@/config/site";
 
 import styles from "./home.module.css";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/site-icon.png`,
+      },
+      sameAs: [
+        siteConfig.links.youtube,
+        siteConfig.links.tiktok,
+        siteConfig.links.twitter,
+        siteConfig.links.discord,
+      ],
+    },
+    {
+      "@type": "VideoGame",
+      "@id": `${siteConfig.url}/#helios`,
+      name: "Heli.os",
+      description:
+        "A knowledge-based action roguelite where discovery is your strongest weapon.",
+      genre: ["Action", "Roguelite"],
+      publisher: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      url: siteConfig.url,
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
       <section className="flex flex-col items-center justify-center gap-0 pb-0">
         <HeliosHero />
         <StudioManifesto />
@@ -26,18 +68,18 @@ export default function Home() {
             </svg>
           </div>
           <div className={styles.teamIntro}>
-            <h1
+            <h2
               className={clsx(title(), "auxMono notBold", styles.teamHeading)}
             >
               The brainglyph team
-            </h1>
-            <h2 className={clsx("text-lg poppins-regular", styles.teamCopy)}>
+            </h2>
+            <p className={clsx("text-lg poppins-regular", styles.teamCopy)}>
               We have worked together for almost two years, since we found out
               our shared passion for independent game development. We met at the
               IT University of Copenhagen Master of Sciences in Games
               Technology, which we completed in June 2024. Our drive and passion
               brought us closer both professionally and as friends.
-            </h2>
+            </p>
           </div>
           <TeamRoster />
         </section>
@@ -45,9 +87,9 @@ export default function Home() {
         <SupportersSection />
         <ReachOutSection />
         <div className={styles.footer}>
-          <h1 className={clsx("auxMono text-xs", styles.footerHeading)}>
+          <p className={clsx("auxMono text-xs", styles.footerHeading)}>
             This website is made and maintained with ♥ by us, brainglyph!
-          </h1>
+          </p>
         </div>
       </section>
     </>

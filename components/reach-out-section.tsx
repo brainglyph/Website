@@ -4,6 +4,7 @@ import { DiscordIcon, EmailIcon } from "@/components/icons";
 import { title } from "@/components/primitives";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SignalButton } from "@/components/signal-button";
+import { siteConfig } from "@/config/site";
 
 import styles from "./reach-out-section.module.css";
 
@@ -36,7 +37,7 @@ export function ReachOutSection() {
         </p>
         <div className={styles.actions}>
           <SignalButton
-            href="https://ourdiscordserver.com"
+            href={siteConfig.links.discord}
             icon={<DiscordIcon />}
             target="_blank"
             variant="signal"
@@ -44,7 +45,7 @@ export function ReachOutSection() {
             Discord
           </SignalButton>
           <SignalButton
-            href="mailto:hello@brainglyph.com"
+            href={siteConfig.links.email}
             icon={<EmailIcon />}
             target="_blank"
             variant="signal"

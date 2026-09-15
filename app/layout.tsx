@@ -17,40 +17,52 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brainglyph.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
-    apple: [{ url: "/site-icon.png", sizes: "512x512", type: "image/png" }],
+    apple: [{ url: "/site-icon.png", sizes: "192x192", type: "image/png" }],
     icon: [
-      { url: "/site-icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/site-icon.png", sizes: "192x192", type: "image/png" },
       {
         url: "/favicon-light.png",
         media: "(prefers-color-scheme: light)",
-        sizes: "512x512",
+        sizes: "192x192",
         type: "image/png",
       },
       {
         url: "/favicon-dark.png",
         media: "(prefers-color-scheme: dark)",
-        sizes: "512x512",
+        sizes: "192x192",
         type: "image/png",
       },
     ],
   },
   openGraph: {
     description: siteConfig.description,
+    images: [
+      {
+        alt: "Brainglyph",
+        height: 630,
+        url: "/og-summary.png",
+        width: 1200,
+      },
+    ],
     siteName: siteConfig.name,
     title: siteConfig.name,
     type: "website",
     url: "/",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     description: siteConfig.description,
+    images: ["/og-summary.png"],
     title: siteConfig.name,
   },
 };

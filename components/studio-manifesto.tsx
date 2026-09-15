@@ -127,6 +127,21 @@ export function StudioManifesto() {
             <GlyphRollText active={isInView} text={PHRASES[phraseIndex]} />
           </span>
         </motion.h2>
+        <motion.p
+          className={styles.intro}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          transition={{
+            delay: shouldReduceMotion ? 0 : 0.18,
+            duration: 0.65,
+            ease: [0.23, 1, 0.32, 1],
+          }}
+          viewport={{ amount: 0.4, once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          Brainglyph is an independent game studio creating Heli.os, a
+          knowledge-based action roguelite where discovery is your strongest
+          weapon.
+        </motion.p>
       </div>
     </motion.section>
   );

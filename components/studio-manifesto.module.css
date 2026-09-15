@@ -96,6 +96,16 @@
   overflow-wrap: anywhere;
 }
 
+.intro {
+  max-width: 46rem;
+  margin: 2rem auto 0;
+  color: #fffff0;
+  font-family: var(--font-jura), sans-serif;
+  font-size: clamp(1.05rem, 1.65vw, 1.25rem);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
 @media (max-width: 640px) {
   .section {
     --manifesto-bottom-extra: 0rem;
@@ -112,6 +122,10 @@
 
   .brainLockup {
     margin-bottom: 2rem;
+  }
+
+  .intro {
+    margin-top: 1.5rem;
   }
 }
 
